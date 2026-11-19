@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --color-moto-bg: #08090B;
+    --color-moto-secondary: #111216;
+    --color-moto-card: #191A1F;
+    --color-moto-surface: #222329;
+    --color-moto-border: #303137;
+    --color-moto-accent: #C62828;
+    --color-moto-accent-hover: #E23B3B;
+    --color-moto-text: #F4F2EF;
+    --color-moto-muted: #92939A;
+
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom Base Styles */
+:root {
+    color-scheme: dark;
+}
+
+body {
+    background-color: var(--color-moto-bg);
+    color: var(--color-moto-text);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #08090B;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #303137;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #C62828;
+}
+
+/* Typography Utility */
+.font-display {
+    font-family: var(--font-display);
+}
+
+/* Luxury Accents */
+.accent-border-glow {
+    box-shadow: 0 0 25px -5px rgba(198, 40, 40, 0.35);
+}
+
+.text-gradient-gold {
+    background: linear-gradient(135deg, #F4F2EF 30%, #92939A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism Accents (limited to navbar & modals) */
+.glass-panel {
+    background: rgba(17, 18, 22, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid #303137;
+}
+
+/* Animation utilities */
+@media (prefers-reduced-motion: no-preference) {
+    .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+    }
+
+    .reveal-on-scroll.is-revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 100ms; }
+    .reveal-delay-2 { transition-delay: 200ms; }
+    .reveal-delay-3 { transition-delay: 300ms; }
+    .reveal-delay-4 { transition-delay: 400ms; }
+}
+
+/* Global Accessible Focus Indicators for Keyboard Navigation (R-32) */
+:focus-visible {
+    outline: 2px solid #C62828 !important;
+    outline-offset: 2px !important;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #E23B3B !important;
+    outline-offset: 2px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}

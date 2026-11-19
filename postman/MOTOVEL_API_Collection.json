@@ -1,0 +1,1066 @@
+{
+	"info": {
+		"_postman_id": "a9b3d174-8891-4c40-9a4f-71286c8f9001",
+		"name": "MOTOVEL API Collection v1",
+		"description": "Dokumentasi REST API v1 untuk Website Manajemen Layanan Bengkel Sepeda Motor MOTOVEL. Mencakup 35 endpoints lengkap untuk 7 modul utama: Customers, Vehicles, Mechanics, Services, Service Details, Spareparts, dan Payments.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/api/v1",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "1. Customers",
+			"description": "Endpoint pengelolaan data master pelanggan pemilik sepeda motor.",
+			"item": [
+				{
+					"name": "Get All Customers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/customers?search=&per_page=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "",
+									"description": "Pencarian nama, customer_id, no. HP, pekerjaan"
+								},
+								{
+									"key": "per_page",
+									"value": "10",
+									"description": "Jumlah data per halaman"
+								}
+							]
+						},
+						"description": "Mengambil seluruh data pelanggan dengan pagination dan pencarian."
+					}
+				},
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Budi Santoso\",\n    \"phone\": \"081298765432\",\n    \"address\": \"Jl. Mayjen Sungkono No. 45, Surabaya, Jawa Timur\",\n    \"occupation\": \"Software Engineer\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/customers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers"
+							]
+						},
+						"description": "Menambahkan data pelanggan baru ke sistem MOTOVEL."
+					}
+				},
+				{
+					"name": "Get Customer by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/customers/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								"1"
+							]
+						},
+						"description": "Mengambil detail profil pelanggan, daftar motor miliknya, dan riwayat servis."
+					}
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Budi Santoso, S.Kom.\",\n    \"phone\": \"081298765432\",\n    \"address\": \"Jl. Mayjen Sungkono No. 45B, Surabaya, Jawa Timur\",\n    \"occupation\": \"Lead Architect\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/customers/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								"1"
+							]
+						},
+						"description": "Memperbarui data profil pelanggan yang sudah ada."
+					}
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/customers/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								"1"
+							]
+						},
+						"description": "Menghapus data pelanggan dari basis data sistem."
+					}
+				}
+			]
+		},
+		{
+			"name": "2. Vehicles",
+			"description": "Endpoint pengelolaan data master sepeda motor pelanggan bengkel.",
+			"item": [
+				{
+					"name": "Get All Vehicles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/vehicles?search=&type=&per_page=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vehicles"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "",
+									"description": "Pencarian plat nomor atau nomor STNK"
+								},
+								{
+									"key": "type",
+									"value": "",
+									"description": "Filter transmisi: matic atau manual"
+								},
+								{
+									"key": "per_page",
+									"value": "10",
+									"description": "Jumlah data per halaman"
+								}
+							]
+						},
+						"description": "Mengambil seluruh data sepeda motor beserta profil pelanggan pemilik."
+					}
+				},
+				{
+					"name": "Create Vehicle",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 1,\n    \"plate_number\": \"L 1234 ABC\",\n    \"type\": \"matic\",\n    \"stnk_number\": \"STNK-77889911\",\n    \"year\": 2023,\n    \"color\": \"Matte Black\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/vehicles",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vehicles"
+							]
+						},
+						"description": "Mendaftarkan unit sepeda motor baru milik pelanggan."
+					}
+				},
+				{
+					"name": "Get Vehicle by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/vehicles/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vehicles",
+								"1"
+							]
+						},
+						"description": "Mengambil detail kendaraan, identitas pemilik, dan riwayat servis."
+					}
+				},
+				{
+					"name": "Update Vehicle",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer_id\": 1,\n    \"plate_number\": \"L 1234 ABC\",\n    \"type\": \"matic\",\n    \"stnk_number\": \"STNK-77889911-REV\",\n    \"year\": 2023,\n    \"color\": \"Metallic Crimson Red\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/vehicles/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vehicles",
+								"1"
+							]
+						},
+						"description": "Memperbarui identitas sepeda motor pelanggan."
+					}
+				},
+				{
+					"name": "Delete Vehicle",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/vehicles/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vehicles",
+								"1"
+							]
+						},
+						"description": "Menghapus data unit sepeda motor dari sistem."
+					}
+				}
+			]
+		},
+		{
+			"name": "3. Mechanics",
+			"description": "Endpoint pengelolaan data staf teknisi / mekanik bengkel MOTOVEL.",
+			"item": [
+				{
+					"name": "Get All Mechanics",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/mechanics?search=&per_page=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"mechanics"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "",
+									"description": "Pencarian nama, id mekanik, spesialisasi"
+								},
+								{
+									"key": "per_page",
+									"value": "10",
+									"description": "Jumlah data per halaman"
+								}
+							]
+						},
+						"description": "Mengambil seluruh daftar mekanik aktif beserta total pengerjaan servis."
+					}
+				},
+				{
+					"name": "Create Mechanic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dwi Kurniawan\",\n    \"phone\": \"081377889900\",\n    \"address\": \"Jl. Rungkut Asri No. 12, Surabaya\",\n    \"specialty\": \"Transmisi Matic CVT & Injeksi ECU\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/mechanics",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"mechanics"
+							]
+						},
+						"description": "Mendaftarkan teknisi/mekanik baru ke dalam bengkel."
+					}
+				},
+				{
+					"name": "Get Mechanic by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/mechanics/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"mechanics",
+								"1"
+							]
+						},
+						"description": "Mengambil detail profil teknisi dan portofolio servis yang ditangani."
+					}
+				},
+				{
+					"name": "Update Mechanic",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dwi Kurniawan, A.Md.\",\n    \"phone\": \"081377889900\",\n    \"address\": \"Jl. Rungkut Asri Timur No. 12B, Surabaya\",\n    \"specialty\": \"Master Dyno Remap & Suspension Specialist\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/mechanics/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"mechanics",
+								"1"
+							]
+						},
+						"description": "Memperbarui spesialisasi dan informasi kontak mekanik."
+					}
+				},
+				{
+					"name": "Delete Mechanic",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/mechanics/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"mechanics",
+								"1"
+							]
+						},
+						"description": "Menghapus mekanik jika belum memiliki riwayat pengerjaan servis."
+					}
+				}
+			]
+		},
+		{
+			"name": "4. Services",
+			"description": "Endpoint pengelolaan antrean dan registrasi servis masuk.",
+			"item": [
+				{
+					"name": "Get All Services",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/services?search=&status=&per_page=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"services"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "",
+									"description": "Pencarian id servis, keluhan, plat motor, nama pelanggan"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"description": "Filter status: waiting, in_progress, completed, cancelled"
+								},
+								{
+									"key": "per_page",
+									"value": "10",
+									"description": "Jumlah data per halaman"
+								}
+							]
+						},
+						"description": "Mengambil seluruh antrean servis motor beserta status pengerjaannya."
+					}
+				},
+				{
+					"name": "Create Service Registration",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vehicle_id\": 1,\n    \"complaint\": \"Tarikan gas bawah tersendat, rem depan berdecit saat hujan, ganti oli mesin 10W-40\",\n    \"service_date\": \"2024-11-15\",\n    \"status\": \"waiting\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/services",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"services"
+							]
+						},
+						"description": "Mendaftarkan antrean servis baru untuk unit kendaraan pelanggan."
+					}
+				},
+				{
+					"name": "Get Service by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/services/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"services",
+								"1"
+							]
+						},
+						"description": "Mengambil detail pendaftaran servis, kendaraan, mekanik penanggung jawab, dan status kasir."
+					}
+				},
+				{
+					"name": "Update Service Registration",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vehicle_id\": 1,\n    \"complaint\": \"Tarikan gas bawah tersendat (sudah diinfus injektor), rem depan berdecit\",\n    \"service_date\": \"2024-11-15\",\n    \"status\": \"in_progress\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/services/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"services",
+								"1"
+							]
+						},
+						"description": "Memperbarui keluhan dan status pengerjaan servis."
+					}
+				},
+				{
+					"name": "Delete Service Registration",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/services/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"services",
+								"1"
+							]
+						},
+						"description": "Membatalkan / menghapus pendaftaran servis dari sistem."
+					}
+				}
+			]
+		},
+		{
+			"name": "5. Service Details",
+			"description": "Endpoint pengerjaan teknis montir, alokasi suku cadang, dan kalkulasi otomatis tagihan kasir.",
+			"item": [
+				{
+					"name": "Get All Service Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/service-details?search=&per_page=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service-details"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "",
+									"description": "Pencarian detail_id, id servis, nama mekanik"
+								},
+								{
+									"key": "per_page",
+									"value": "10",
+									"description": "Jumlah data per halaman"
+								}
+							]
+						},
+						"description": "Mengambil seluruh data rincian teknis pengerjaan servis."
+					}
+				},
+				{
+					"name": "Create Service Detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"service_registration_id\": 1,\n    \"mechanic_id\": 1,\n    \"estimation\": \"Pembersihan injektor, kalibrasi ECU, penggantian kampas rem depan\",\n    \"service_cost\": 85000,\n    \"service_status\": \"in_progress\",\n    \"spareparts\": [\n        {\n            \"id\": 1,\n            \"qty\": 1\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/service-details",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service-details"
+							]
+						},
+						"description": "Mencatat rincian pengerjaan teknisi, memotong stok gudang secara otomatis via DB transaction, dan menerbitkan tagihan kasir."
+					}
+				},
+				{
+					"name": "Get Service Detail by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/service-details/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service-details",
+								"1"
+							]
+						},
+						"description": "Mengambil detail teknis pengerjaan, montir yang bertugas, dan daftar sparepart yang dipakai."
+					}
+				},
+				{
+					"name": "Update Service Detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mechanic_id\": 1,\n    \"estimation\": \"Pembersihan tuntas, motor telah diuji jalan dan siap serah terima\",\n    \"service_cost\": 95000,\n    \"service_status\": \"completed\",\n    \"spareparts\": [\n        {\n            \"id\": 1,\n            \"qty\": 1\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/service-details/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service-details",
+								"1"
+							]
+						},
+						"description": "Memperbarui diagnosa teknisi dan merestorasi/memotong ulang stok suku cadang secara aman."
+					}
+				},
+				{
+					"name": "Delete Service Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/service-details/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service-details",
+								"1"
+							]
+						},
+						"description": "Menghapus rincian pengerjaan dan mengembalikan stok suku cadang ke gudang."
+					}
+				}
+			]
+		},
+		{
+			"name": "6. Spareparts",
+			"description": "Endpoint manajemen inventaris katalog suku cadang dan oli motor.",
+			"item": [
+				{
+					"name": "Get All Spareparts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/spareparts?search=&category=&per_page=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"spareparts"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "",
+									"description": "Pencarian nama atau kode sparepart"
+								},
+								{
+									"key": "category",
+									"value": "",
+									"description": "Filter kategori suku cadang"
+								},
+								{
+									"key": "per_page",
+									"value": "10",
+									"description": "Jumlah data per halaman"
+								}
+							]
+						},
+						"description": "Mengambil seluruh katalog suku cadang beserta status ketersediaan stok gudang."
+					}
+				},
+				{
+					"name": "Create Sparepart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Motul 7100 4T 10W-40 1L (100% Ester Synthetic)\",\n    \"category\": \"Oli Mesin\",\n    \"price\": 185000,\n    \"stock\": 24,\n    \"description\": \"Oli motor premium berbahan dasar ester sintetis murni untuk performa mesin sport dan matic besar\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/spareparts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"spareparts"
+							]
+						},
+						"description": "Menambahkan suku cadang atau pelumas baru ke katalog bengkel."
+					}
+				},
+				{
+					"name": "Get Sparepart by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/spareparts/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"spareparts",
+								"1"
+							]
+						},
+						"description": "Mengambil detail spesifikasi suku cadang dan riwayat pemakaian dalam servis."
+					}
+				},
+				{
+					"name": "Update Sparepart",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Motul 7100 4T 10W-40 1L (100% Ester Synthetic)\",\n    \"category\": \"Oli Mesin Racing\",\n    \"price\": 195000,\n    \"stock\": 30,\n    \"description\": \"Oli motor premium berbahan dasar ester sintetis murni untuk performa mesin sport dan matic besar (Formula Terkini)\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/spareparts/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"spareparts",
+								"1"
+							]
+						},
+						"description": "Memperbarui harga jual, stok gudang, dan keterangan suku cadang."
+					}
+				},
+				{
+					"name": "Delete Sparepart",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/spareparts/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"spareparts",
+								"1"
+							]
+						},
+						"description": "Menghapus suku cadang jika belum pernah dipakai dalam transaksi servis."
+					}
+				}
+			]
+		},
+		{
+			"name": "7. Payments",
+			"description": "Endpoint transaksi kasir, nota pembayaran, dan status pelunasan servis.",
+			"item": [
+				{
+					"name": "Get All Payments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/payments?search=&status=&per_page=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payments"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "",
+									"description": "Pencarian invoice_id, no plat, nama pelanggan"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"description": "Filter status pembayaran: pending atau paid"
+								},
+								{
+									"key": "per_page",
+									"value": "10",
+									"description": "Jumlah data per halaman"
+								}
+							]
+						},
+						"description": "Mengambil seluruh transaksi kasir pembayaran bengkel."
+					}
+				},
+				{
+					"name": "Create Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"service_registration_id\": 1,\n    \"service_cost\": 85000,\n    \"sparepart_cost\": 185000,\n    \"payment_type\": \"non-cash\",\n    \"status\": \"paid\",\n    \"notes\": \"Pelunasan via transfer QRIS Mandiri\",\n    \"payment_date\": \"2024-11-15\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/payments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payments"
+							]
+						},
+						"description": "Menerbitkan nota kasir dan mencatat status pembayaran servis."
+					}
+				},
+				{
+					"name": "Get Payment by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/payments/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payments",
+								"1"
+							]
+						},
+						"description": "Mengambil rincian invoice tagihan kasir lengkap beserta rincian jasa dan suku cadang."
+					}
+				},
+				{
+					"name": "Update Payment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"service_cost\": 85000,\n    \"sparepart_cost\": 185000,\n    \"payment_type\": \"cash\",\n    \"status\": \"paid\",\n    \"notes\": \"Lunas tunai di kasir bengkel\",\n    \"payment_date\": \"2024-11-15\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/payments/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payments",
+								"1"
+							]
+						},
+						"description": "Memperbarui data transaksi pembayaran kasir."
+					}
+				},
+				{
+					"name": "Delete Payment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/payments/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"payments",
+								"1"
+							]
+						},
+						"description": "Menghapus catatan transaksi pembayaran kasir."
+					}
+				}
+			]
+		}
+	]
+}
