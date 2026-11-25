@@ -74,6 +74,8 @@
 
 A. Tahap pertama dilakukan dengan membuat proyek Laravel baru menggunakan Composer melalui Terminal atau Command Prompt pada sistem operasi. Perintah `composer create-project laravel/laravel motovel` dijalankan untuk mengunduh dan memasang kerangka kerja framework Laravel versi 12 beserta dependensi inti yang dibutuhkan. Proses ini secara otomatis membentuk struktur direktori dan berkas bawaan Laravel, seperti folder `app`, `bootstrap`, `config`, `database`, `public`, `resources`, `routes`, `storage`, dan `tests`. Setelah proses instalasi selesai, folder `motovel` terbentuk sebagai direktori utama pengembangan sistem manajemen servis sepeda motor.
 
+![Gambar 5.1 Tangkapan Layar Pembuatan Proyek Laravel Baru pada Windows PowerShell](screenshots/01_composer_create_project.png)
+
 ```powershell
 PS D:\Xampp\htdocs> composer create-project laravel/laravel motovel
 Creating a "laravel/laravel" project at "./motovel"
@@ -88,6 +90,8 @@ Application key set successfully.
 
 B. Setelah proses pembuatan proyek Laravel selesai, tahap berikutnya adalah masuk ke dalam direktori kerja proyek menggunakan perintah `cd motovel` melalui terminal. Perintah tersebut berfungsi memindahkan letak direktori aktif ke folder utama proyek. Selanjutnya, perintah `code .` dijalankan untuk membuka seluruh susunan direktori proyek ke dalam editor Visual Studio Code sehingga pengelolaan berkas, penulisan logika kode, dan konfigurasi sistem dapat dilakukan secara efisien.
 
+![Gambar 5.2 Tangkapan Layar Navigasi Folder dan Membuka Visual Studio Code](screenshots/02_cd_and_code.png)
+
 ```powershell
 PS D:\Xampp\htdocs> cd motovel
 PS D:\Xampp\htdocs\motovel> code .
@@ -101,7 +105,11 @@ C. Pada tahap ini, basis data relasional dibuat menggunakan DBMS MySQL melalui M
 CREATE DATABASE motovel_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
+![Gambar 5.3 Tangkapan Layar Pembuatan Database motovel_db pada phpMyAdmin](screenshots/03_phpmyadmin_createdb.png)
+
 2. Berkas `.env` digunakan untuk mengatur parameter konfigurasi koneksi antara aplikasi Laravel dan server basis data MySQL. Pada tahap ini, parameter `DB_CONNECTION`, `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, dan `DB_PASSWORD` disesuaikan dengan konfigurasi server MySQL lokal XAMPP yang aktif pada port 3306. Setelah konfigurasi disimpan, framework Laravel dapat terhubung secara langsung ke basis data `motovel_db`.
+
+![Gambar 5.4 Tangkapan Layar Konfigurasi Koneksi Basis Data pada Berkas .env](screenshots/04_env_config.png)
 
 ```env
 DB_CONNECTION=mysql
@@ -116,6 +124,8 @@ D. Pada tahap ini, berkas migration dibuat untuk merancang dan mendefinisikan sk
 
 1. Pembuatan migration dilakukan secara berurutan sesuai urutan ketergantungan relasi tabel menggunakan perintah `php artisan make:migration create_nama_table`. Perintah ini menghasilkan berkas migration dengan stempel waktu di folder `database/migrations/`.
 
+![Gambar 5.5 Tangkapan Layar Pembuatan Berkas Migration Menggunakan Artisan CLI](screenshots/05_make_migrations.png)
+
 ```powershell
 PS D:\Xampp\htdocs\motovel> php artisan make:migration create_customers_table
 PS D:\Xampp\htdocs\motovel> php artisan make:migration create_vehicles_table
@@ -129,6 +139,8 @@ PS D:\Xampp\htdocs\motovel> php artisan make:migration create_contact_messages_t
 ```
 
 2. Setelah seluruh berkas migration dibuat, daftar berkas diperiksa pada direktori `database/migrations/` untuk memastikan bahwa semua tabel yang dibutuhkan dalam alur kerja bengkel telah tersedia dengan nama dan urutan berkas yang presisi.
+
+![Gambar 5.6 Tangkapan Layar Daftar Berkas Migration di Folder database/migrations](screenshots/06_migrations_list.png)
 
 ```powershell
 PS D:\Xampp\htdocs\motovel> Get-ChildItem database/migrations | Select-Object -ExpandProperty Name
@@ -165,6 +177,8 @@ E. Pada tahap ini, scaffolding API dikonfigurasi menggunakan Laravel Sanctum unt
 
 1. Perintah `php artisan install:api` dijalankan untuk menerbitkan berkas konfigurasi rute API `routes/api.php` serta mempersiapkan migrasi tabel `personal_access_tokens`.
 
+![Gambar 5.7 Tangkapan Layar Instalasi API Scaffolding dan Laravel Sanctum](screenshots/07_install_api.png)
+
 ```powershell
 PS D:\Xampp\htdocs\motovel> php artisan install:api
   - Updating composer.json
@@ -175,6 +189,8 @@ INFO API scaffolding installed.
 
 2. Konfirmasi terminal dijawab untuk melanjutkan proses penataan dependensi rute API.
 3. Seluruh tabel diterapkan ke dalam basis data `motovel_db` dengan menjalankan perintah `php artisan migrate:fresh`. Perintah ini membersihkan basis data dan mengeksekusi ulang seluruh berkas migration dari awal secara bersih.
+
+![Gambar 5.8 Tangkapan Layar Eksekusi Migration Fresh ke Basis Data MySQL](screenshots/08_migrate_fresh.png)
 
 ```powershell
 PS D:\Xampp\htdocs\motovel> php artisan migrate:fresh
@@ -197,6 +213,8 @@ Running migrations.
 ```
 
 4. Status eksekusi migrasi diperiksa menggunakan perintah `php artisan migrate:status`. Output menampilkan bahwa seluruh migrasi berstatus **Ran** dengan Batch 1, mengonfirmasikan bahwa skema tabel telah aktif 100% pada database.
+
+![Gambar 5.9 Tangkapan Layar Pemeriksaan Status Seluruh Migration (Ran)](screenshots/09_migrate_status.png)
 
 ```powershell
 PS D:\Xampp\htdocs\motovel> php artisan migrate:status
@@ -222,6 +240,8 @@ F. Pada tahap ini, model Eloquent ORM dibuat untuk merepresentasikan setiap tabe
 
 1. Pembuatan model dilakukan melalui terminal menggunakan perintah `php artisan make:model NamaModel`.
 
+![Gambar 5.10 Tangkapan Layar Pembuatan Model Eloquent MOTOVEL](screenshots/10_make_models.png)
+
 ```powershell
 PS D:\Xampp\htdocs\motovel> php artisan make:model Customer
 PS D:\Xampp\htdocs\motovel> php artisan make:model Vehicle
@@ -244,6 +264,8 @@ PS D:\Xampp\htdocs\motovel> php artisan make:model ContactMessage
    - `Payment`: relasi `belongsTo(ServiceRegistration::class)`.
 
 3. Daftar berkas model diperiksa di folder `app/Models/` untuk memastikan seluruh berkas telah terbentuk dengan lengkap.
+
+![Gambar 5.11 Tangkapan Layar Daftar Seluruh Berkas Model di Direktori app/Models](screenshots/11_models_list.png)
 
 ```powershell
 PS D:\Xampp\htdocs\motovel> Get-ChildItem app\Models | Select-Object -ExpandProperty Name
@@ -271,6 +293,8 @@ Database seeding completed successfully.
 H. Pada tahap ini, controller aplikasi web dibuat untuk memproses seluruh alur logika sistem, menangani permintaan HTTP pengguna, melakukan validasi masukan form, berinteraksi dengan model Eloquent, dan mengembalikan tampilan antarmuka Blade.
 
 1. Pembuatan Controller Web dilakukan menggunakan perintah Artisan `php artisan make:controller NamaController`:
+
+![Gambar 5.12 Tangkapan Layar Pembuatan Berkas Controller Web Aplikasi](screenshots/12_make_controllers.png)
    - `PublicController`: Mengatur halaman publik landing page, about, services, gallery, dan contact.
    - `BookingController`: Mengatur pendaftaran servis mandiri oleh pelanggan (wizard booking publik) dan verifikasi nomor telepon async.
    - `ContactController`: Mengatur penyimpanan pesan kontak masuk.
@@ -287,6 +311,8 @@ H. Pada tahap ini, controller aplikasi web dibuat untuk memproses seluruh alur l
    - `ReportController`: Menyajikan laporan berkala periode tanggal, filter performa, ringkasan pendapatan, dan cetak laporan.
 
 2. Pemeriksaan berkas controller pada folder `app/Http/Controllers/`:
+
+![Gambar 5.12 Tangkapan Layar Daftar Berkas Controller Web di app/Http/Controllers](screenshots/13_controllers_list.png)
 
 ```powershell
 PS D:\Xampp\htdocs\motovel> Get-ChildItem app\Http\Controllers -File | Select-Object -ExpandProperty Name
@@ -310,6 +336,8 @@ I. Pada tahap ini, Controller REST API dibuat secara khusus di dalam direktori `
 
 1. Dibuat kelas fondasi abstrak `app/Http/Controllers/Api/BaseApiController.php` yang menyediakan method standar JSON seragam: `sendSuccess($data, $message, $code = 200)` dan `sendError($message, $errors = [], $code = 400)`.
 2. Dibuat 7 controller API turunan untuk mengelola operasi RESTful standar (index, store, show, update, destroy) menggunakan perintah `php artisan make:controller Api/V1/NamaController --api`:
+
+![Gambar 5.14 Tangkapan Layar Pembuatan Berkas API Controller V1](screenshots/14_make_api_controllers.png)
    - `Api/V1/CustomerController`
    - `Api/V1/VehicleController`
    - `Api/V1/MechanicController`
@@ -317,6 +345,8 @@ I. Pada tahap ini, Controller REST API dibuat secara khusus di dalam direktori `
    - `Api/V1/ServiceDetailController`
    - `Api/V1/SparepartController`
    - `Api/V1/PaymentController`
+
+![Gambar 5.13 Tangkapan Layar Pembuatan Berkas Controller REST API v1](screenshots/15_api_controllers_list.png)
 
 ```powershell
 PS D:\Xampp\htdocs\motovel> Get-ChildItem app\Http\Controllers\Api\V1 | Select-Object -ExpandProperty Name
@@ -333,6 +363,8 @@ J. Pada tahap ini, konfigurasi rute diatur secara terpisah pada berkas `routes/w
 
 1. Berkas `routes/api.php` didaftarkan menggunakan pengelompokan prefix `v1` dan method `Route::apiResource()`, yang otomatis mengaktifkan 35 endpoint RESTful API:
 
+![Gambar 5.14 Tangkapan Layar Konfigurasi Rute REST API v1 pada routes/api.php](screenshots/16_routes_api.png)
+
 ```php
 Route::prefix('v1')->name('api.v1.')->group(function () {
     Route::apiResource('customers', CustomerController::class);
@@ -347,6 +379,8 @@ Route::prefix('v1')->name('api.v1.')->group(function () {
 
 2. Berkas `routes/web.php` didaftarkan dengan total 54 rute terproteksi middleware `auth` untuk modul admin dashboard, serta rute bebas akses untuk antarmuka publik pelanggan dan formulir login.
 
+![Gambar 5.17 Tangkapan Layar Konfigurasi Rute Web pada routes/web.php](screenshots/17_routes_web.png)
+
 K. Pada tahap ini, antarmuka pengguna (User Interface) dibangun menggunakan Laravel Blade Template Engine yang dipadukan dengan styling Tailwind CSS v4 bertema *Dark Luxury Automotive* dan Vite sebagai *build tool*.
 
 1. Berkas dan direktori views dikelompokkan secara terstruktur di dalam folder `resources/views/`:
@@ -356,6 +390,8 @@ K. Pada tahap ini, antarmuka pengguna (User Interface) dibangun menggunakan Lara
    - `resources/views/auth/`: Berisi berkas formulir `login.blade.php`.
    - `resources/views/admin/`: Terdiri dari 9 subdirektori modul CRUD (`customers`, `vehicles`, `mechanics`, `services`, `service_details`, `spareparts`, `payments`, `history`, `reports`) dengan total 33 berkas Blade (mencakup tampilan tabel `index`, form `create`, form `edit`, detail `show`, lembar cetak struk kasir `receipt`, dan cetak `print`).
 2. Konfigurasi aset styling pada `resources/css/app.css` dikompilasi ke direktori publik menggunakan Vite melalui perintah `npm run build`.
+
+![Gambar 5.15 Tangkapan Layar Struktur Folder Views dan Kompilasi Aset Vite](screenshots/18_views_structure.png)
 
 ```powershell
 PS D:\Xampp\htdocs\motovel> npm run build
@@ -375,6 +411,8 @@ A. Pada tahap ini, pengujian fungsionalitas antarmuka website MOTOVEL dijalankan
 
 1. Server lokal Laravel dijalankan melalui terminal dengan mengeksekusi perintah `php artisan serve`. Perintah tersebut mengaktifkan web server internal pengembangan pada port 8000 sehingga website MOTOVEL dapat diakses secara langsung melalui alamat `http://127.0.0.1:8000`.
 
+![Gambar 6.1 Tangkapan Layar Server Lokal Pengembangan Laravel Berhasil Berjalan](screenshots/19_artisan_serve.png)
+
 ```powershell
 PS D:\Xampp\htdocs\motovel> php artisan serve
    INFO  Server running on [http://127.0.0.1:8000].
@@ -390,11 +428,15 @@ PS D:\Xampp\htdocs\motovel> php artisan serve
    - **Testimonials & Interactive FAQ**: Accordion interaktif pertanyaan seputar servis dan garansi.
    - **Footer Editorial**: Tautan navigasi cepat, jam operasional, dan info kontak resmi bengkel.
 
+![Gambar 6.2 Tangkapan Layar Halaman Utama / Landing Page Publik MOTOVEL](screenshots/21_web_landing.png)
+
 3. Pengujian Booking Engine Interaktif (`http://127.0.0.1:8000/booking`) dilakukan dengan menguji formulir pemesanan jadwal servis mandiri berbasis wizard multi-langkah:
    - Pelanggan memasukkan nomor telepon aktif. Sistem secara otomatis menjalankan *async verification* via AJAX ke endpoint `/booking/check-phone` untuk memeriksa apakah nomor tersebut sudah terdaftar di sistem.
    - Jika terdaftar, nama lengkap dan daftar kendaraan pelanggan langsung terisi secara otomatis (*auto-complete*). Jika belum, formulir membuka input pendaftaran identitas pelanggan dan spesifikasi motor baru (nomor plat, merk, tipe, dan transmisi).
    - Pelanggan memilih jenis paket servis, mengisi keluhan motor, serta memilih tanggal servis.
    - Saat tombol konfirmasi diklik, sistem membuat tiket pendaftaran baru dengan kode unik berformat `SRV-xxxx` dan mengarahkan pengguna ke halaman `http://127.0.0.1:8000/booking/success/{id}` yang menampilkan tiket booking resmi yang dapat disimpan oleh pelanggan.
+
+![Gambar 6.3 Tangkapan Layar Antarmuka Booking Engine Mandiri MOTOVEL](screenshots/22_web_booking.png)
 
 4. Pengujian Halaman Login dan Autentikasi Pengguna (`http://127.0.0.1:8000/login`) dilakukan untuk menguji sistem keamanan akses dashboard administrasi:
    - Form otentikasi dirancang elegan dengan perlindungan token CSRF (`@csrf`).
@@ -402,11 +444,15 @@ PS D:\Xampp\htdocs\motovel> php artisan serve
    - Pengujian input kredensial yang salah menghasilkan pesan kesalahan berbahasa Indonesia *"Kredensial yang diberikan tidak cocok dengan data kami."*.
    - Saat kredensial valid dimasukkan, sesi autentikasi berhasil dibuat dan pengguna langsung dialihkan secara otomatis ke antarmuka `/admin/dashboard`.
 
+![Gambar 6.4 Tangkapan Layar Halaman Autentikasi / Login Administrator](screenshots/20_web_login.png)
+
 5. Pengujian Dashboard Administrasi Bengkel (`http://127.0.0.1:8000/admin/dashboard`) menampilkan ringkasan metrik performa utama (KPI) bengkel MOTOVEL:
    - Kartu metrik: Total Pelanggan Aktif, Total Motor Terdaftar, Antrean Servis Aktif, dan Total Akumulasi Pendapatan Bersih (format mata uang Rupiah).
    - Grafik tren statistik mingguan servis masuk.
    - Tabel jalan pintas antrean servis yang membutuhkan penanganan segera serta daftar 5 transaksi kasir terbaru.
    - Navigasi sidebar responsif dengan tautan lengkap ke 9 modul operasional bengkel.
+
+![Gambar 6.5 Tangkapan Layar Tampilan Admin Dashboard Overview](screenshots/23_web_dashboard.png)
 
 6. Pengujian CRUD Manajemen Data Pelanggan (`http://127.0.0.1:8000/admin/customers`):
    - **Tampilan Daftar (Index)**: Menampilkan tabel pelanggan dilengkapi kolom pencarian dinamis, pagination, dan nomor kontak aktif.
@@ -414,27 +460,43 @@ PS D:\Xampp\htdocs\motovel> php artisan serve
    - **Ubah Data (Edit)**: Formulir pembaruan data pelanggan berhasil menyimpan perubahan identitas ke basis data.
    - **Hapus Data (Delete)**: Modal konfirmasi pencegahan penghapusan tidak sengaja berfungsi dengan baik.
 
+![Gambar 6.6 Tangkapan Layar Formulir Tambah Data Pelanggan Baru](screenshots/24_web_customers_create.png)
+
 7. Pemeriksaan Data Pelanggan pada Database MySQL:
    - Data pelanggan yang ditambahkan melalui website diverifikasi langsung melalui phpMyAdmin pada basis data `motovel_db` tabel `customers`.
    - Kolom `customer_code`, `name`, `phone`, `email`, `address`, `created_at`, dan `updated_at` tersimpan dengan nilai yang sesuai tanpa adanya anomali karakter.
+
+![Gambar 6.7 Tangkapan Layar Verifikasi Data Pelanggan pada Tabel customers di phpMyAdmin](screenshots/25_db_customers.png)
 
 8. Pengujian CRUD Manajemen Data Kendaraan (`http://127.0.0.1:8000/admin/vehicles`):
    - **Tampilan Daftar**: Menampilkan daftar seluruh motor terdaftar lengkap dengan plat nomor, merk/model, tahun perakitan, jenis transmisi, dan pemilik kendaraan.
    - **Tambah Kendaraan**: Memilih pemilik kendaraan dari dropdown pelanggan, mengisi nomor plat (misal: `B 1234 MOT`), merk (Honda, Yamaha, Kawasaki, Ducati, dll.), model, tipe transmisi (Matic / Manual / Kopling), dan warna motor.
    - Validasi nomor plat unik mencegah pendaftaran ganda nomor registrasi yang sama di basis data.
 
+![Gambar 6.8 Tangkapan Layar Formulir Pendaftaran Sepeda Motor Baru](screenshots/26_web_vehicles_create.png)
+
 9. Pemeriksaan Data Kendaraan pada Database MySQL:
    - Tabel `vehicles` diperiksa melalui phpMyAdmin. Relasi foreign key `customer_id` terhubung secara tepat ke ID pelanggan yang bersangkutan dengan integritas referensial terjaga.
+
+![Gambar 6.9 Tangkapan Layar Verifikasi Data Kendaraan pada Tabel vehicles di phpMyAdmin](screenshots/27_db_vehicles.png)
+
+![Gambar 6.10 Tangkapan Layar Antarmuka Tabel Master Pelanggan pada Website](screenshots/28_web_customers_index.png)
 
 10. Pengujian CRUD Manajemen Data Mekanik (`http://127.0.0.1:8000/admin/mechanics`):
     - Tampilan direktori mekanik menyajikan daftar nama montir, nomor telepon, bidang keahlian (*Engine Specialist*, *Brake & Suspension*, *Electrical Diagnostics*), serta badge status operasional (*Available*, *Busy*, atau *Off*).
     - Penambahan mekanik baru secara otomatis menerima kode montir `MKN-xxxx`.
     - Perubahan status ketersediaan mekanik dapat diperbarui secara langsung saat mekanik ditugaskan mengerjakan servis.
 
+![Gambar 6.11 Tangkapan Layar Direktori Tenaga Mekanik Bengkel](screenshots/29_web_mechanics.png)
+
 11. Pengujian Pendaftaran Servis Bengkel (`http://127.0.0.1:8000/admin/services`):
     - Pengujian penerimaan motor servis langsung di bengkel (*walk-in service registration*).
     - Form pendaftaran memungkinkan petugas admin memilih pelanggan, memilih unit motor yang terdaftar milik pelanggan tersebut, memilih paket jenis servis, mencatat tanggal masuk, serta menginput keluhan spesifik dari pemilik motor.
     - Status tiket servis diinisialisasi secara otomatis sebagai `pending` dengan nomor pendaftaran `SRV-xxxx`.
+
+![Gambar 6.12 Tangkapan Layar Formulir Pendaftaran Servis Motor (SRV-0001)](screenshots/30_web_services_create.png)
+
+![Gambar 6.13 Tangkapan Layar Daftar Antrean Tiket Servis pada Website](screenshots/31_web_services_index.png)
 
 12. Pengujian Detail Pengerjaan Teknis dan Catatan Diagnosa (`http://127.0.0.1:8000/admin/service-details`):
     - Modul ini mencatat lembar kerja teknis mekanik (*job card*).
@@ -442,10 +504,14 @@ PS D:\Xampp\htdocs\motovel> php artisan serve
     - Mekanik dapat mengalokasikan suku cadang yang digunakan dalam servis dari daftar suku cadang yang tersedia. Sistem otomatis menghitung subtotal suku cadang dan memotong kuantitas stok di gudang.
     - Status servis otomatis diperbarui menjadi `in_progress` atau `completed`.
 
+![Gambar 6.14 Tangkapan Layar Lembar Pengerjaan Teknis Montir dan Alokasi Suku Cadang](screenshots/32_web_service_details.png)
+
 13. Pengujian Manajemen Stok Sparepart (`http://127.0.0.1:8000/admin/spareparts`):
     - Menampilkan katalog inventaris suku cadang bengkel dengan kode `SPR-xxxx`, nama suku cadang, kategori (Pelumas Mesin, Pengereman, Transmisi/CVT, Busi & Kelistrikan), harga satuan jual, dan sisa kuantitas stok.
     - Indikator peringatan stok kritis (*low stock badge*) muncul otomatis jika kuantitas barang di bawah ambang batas minimum.
     - Saat suku cadang dialokasikan pada modul *Service Detail*, kuantitas stok pada tabel `spareparts` berkurang secara otomatis dan akurat.
+
+![Gambar 6.15 Tangkapan Layar Katalog Inventaris Suku Cadang Bengkel](screenshots/33_web_spareparts.png)
 
 14. Pengujian Kasir Transaksi dan Pembayaran Servis (`http://127.0.0.1:8000/admin/payments`):
     - Pengujian proses pembayaran kasir untuk servis motor yang telah selesai dikerjakan (`completed`).
@@ -454,16 +520,26 @@ PS D:\Xampp\htdocs\motovel> php artisan serve
     - Saat nominal pembayaran tunai dimasukkan (`paid_amount`), JavaScript secara reaktif menghitung uang kembalian (`change_amount`) secara instan.
     - Transaksi disimpan ke tabel `payments` dengan nomor transaksi kasir `PAY-xxxx` dan status servis otomatis berganti menjadi selesai dan lunas (`paid`).
 
+![Gambar 6.16 Tangkapan Layar Kasir Transaksi Pembayaran Servis](screenshots/34_web_payments_create.png)
+
 15. Pengujian Cetak Bukti Pembayaran / Struk Transaksi Kasir (`http://127.0.0.1:8000/admin/payments/{id}/receipt`):
     - Pengujian fitur cetak invoice/struk kasir resmi bengkel MOTOVEL.
     - Tampilan cetak nota dirancang khusus dengan gaya struk kasir profesional (*thermal receipt layout*) yang menyajikan kop bengkel, nomor nota, tanggal pembayaran, identitas pelanggan, nomor plat motor, nama mekanik, rincian biaya jasa, daftar sparepart, total pembayaran, nominal bayar, kembalian, serta catatan garansi servis.
     - Tombol cetak memicu dialog *Print to PDF* atau printer termal pada browser secara otomatis melalui fungsi `window.print()`.
+
+![Gambar 6.17 Tangkapan Layar Bukti Pembayaran / Struk Nota Kasir Format Termal](screenshots/35_web_receipt_popup.png)
+
+![Gambar 6.18 Tangkapan Layar Tabel Daftar Riwayat Transaksi Pembayaran Kasir](screenshots/36_web_payments_index.png)
+
+![Gambar 6.19 Tangkapan Layar Verifikasi Data Transaksi Pembayaran pada phpMyAdmin](screenshots/37_db_payments.png)
 
 16. Pengujian Riwayat Servis dan Cetak Laporan Operasional (`http://127.0.0.1:8000/admin/history` & `/admin/reports`):
     - Halaman riwayat servis menyajikan penelusuran status motor dari sejak pendaftaran awal hingga pembayaran selesai lunas.
     - Halaman laporan operasional menyediakan filter rentang tanggal (tanggal awal hingga akhir), filter status, dan filter metode pembayaran.
     - Laporan menyajikan total omzet pendapatan servis, total penjualan suku cadang, dan jumlah unit motor yang berhasil ditangani.
     - Tombol *Cetak Laporan* menghasilkan dokumen laporan bersih siap cetak (*print-optimized view*) untuk pertanggungjawaban manajerial bengkel.
+
+![Gambar 6.20 Tangkapan Layar Halaman Cetak Laporan Keuangan Periodik](screenshots/38_web_reports.png)
 
 ---
 
@@ -472,6 +548,8 @@ B. Pada tahap ini, pengujian antarmuka pemrograman aplikasi (REST API v1) dilaku
 1. Pengujian metode **GET** dilakukan pada endpoint `http://127.0.0.1:8000/api/v1/customers` menggunakan Postman untuk mengambil seluruh daftar data pelanggan yang tersimpan di basis data `motovel_db`.
    - **Header Request:** `Accept: application/json`
    - **Hasil Respons:** Postman menampilkan kode status **HTTP 200 OK** dengan payload JSON terstruktur yang berisi array koleksi pelanggan:
+
+![Gambar 6.21 Tangkapan Layar Pengujian Metode GET /api/v1/customers pada Postman](screenshots/39_postman_get_customers.png)
 
 ```json
 {
@@ -507,6 +585,8 @@ B. Pada tahap ini, pengujian antarmuka pemrograman aplikasi (REST API v1) dilaku
 
    - **Hasil Respons:** Server mengembalikan kode status **HTTP 201 Created** beserta objek data pelanggan baru yang berhasil dibuat dengan kode otomatis `PLG-0002`:
 
+![Gambar 6.22 Tangkapan Layar Pengujian Metode POST /api/v1/customers pada Postman (201 Created)](screenshots/40_postman_post_customer.png)
+
 ```json
 {
     "success": true,
@@ -528,6 +608,10 @@ B. Pada tahap ini, pengujian antarmuka pemrograman aplikasi (REST API v1) dilaku
    - Data pelanggan atas nama "Ahmad Fauzi" diperiksa langsung pada tabel `customers` basis data MySQL melalui phpMyAdmin dan pada halaman web `/admin/customers`.
    - Data baru langsung tampil secara sinkron pada tabel antarmuka web, membuktikan bahwa jalur REST API terintegrasi penuh dengan basis data utama aplikasi.
 
+![Gambar 6.23 Tangkapan Layar Sinkronisasi Data POST API pada Tampilan Website Pelanggan](screenshots/41_web_customers_after_post.png)
+
+![Gambar 6.24 Tangkapan Layar Verifikasi Data Pelanggan Baru Hasil POST API di phpMyAdmin](screenshots/42_db_customers_after_post.png)
+
 4. Pengujian metode **PUT** dilakukan pada endpoint `http://127.0.0.1:8000/api/v1/customers/2` menggunakan Postman untuk memperbarui informasi domisili dan nama pelanggan ID ke-2.
    - **Request Body (JSON):**
 
@@ -541,6 +625,8 @@ B. Pada tahap ini, pengujian antarmuka pemrograman aplikasi (REST API v1) dilaku
 ```
 
    - **Hasil Respons:** Server mengembalikan kode status **HTTP 200 OK** dengan pesan sukses dan atribut data yang telah terbarukan:
+
+![Gambar 6.25 Tangkapan Layar Pengujian Metode PUT /api/v1/customers/2 pada Postman (200 OK)](screenshots/43_postman_put_customer.png)
 
 ```json
 {
@@ -561,8 +647,14 @@ B. Pada tahap ini, pengujian antarmuka pemrograman aplikasi (REST API v1) dilaku
 5. Pemeriksaan Sinkronisasi Data PUT pada Database dan Website:
    - Nilai alamat pelanggan pada basis data MySQL dan tampilan antarmuka web berubah menjadi *"Jl. Teuku Umar No. 88, Banda Aceh"*, membuktikan fungsionalitas pembaruan data API berjalan sempurna.
 
+![Gambar 6.26 Tangkapan Layar Sinkronisasi Data PUT API pada Tampilan Website Pelanggan](screenshots/44_web_customers_after_put.png)
+
+![Gambar 6.27 Tangkapan Layar Verifikasi Data Terupdate Hasil PUT API di phpMyAdmin](screenshots/45_db_customers_after_put.png)
+
 6. Pengujian metode **DELETE** dilakukan pada endpoint `http://127.0.0.1:8000/api/v1/customers/2` menggunakan Postman untuk menguji penghapusan data pelanggan.
    - **Hasil Respons:** Server mengembalikan status **HTTP 200 OK** dengan pesan JSON konfirmasi:
+
+![Gambar 6.28 Tangkapan Layar Pengujian Metode DELETE /api/v1/customers/2 pada Postman (200 OK)](screenshots/46_postman_delete_customer.png)
 
 ```json
 {
@@ -574,6 +666,10 @@ B. Pada tahap ini, pengujian antarmuka pemrograman aplikasi (REST API v1) dilaku
 
 7. Pemeriksaan Sinkronisasi Data DELETE pada Database dan Website:
    - Pelanggan ID ke-2 tidak lagi ditemukan pada basis data MySQL maupun tabel antarmuka web `/admin/customers`, mengonfirmasikan proses penghapusan data via REST API telah terlaksana.
+
+![Gambar 6.29 Tangkapan Layar Sinkronisasi Penghapusan Data pada Tampilan Website](screenshots/47_web_customers_after_delete.png)
+
+![Gambar 6.30 Tangkapan Layar Verifikasi Baris Data Pelanggan Terhapus pada phpMyAdmin](screenshots/48_db_customers_after_delete.png)
 
 8. Pengujian Endpoint Kendaraan, Mekanik, Servis, Sparepart, dan Pembayaran:
    - Seluruh siklus RESTful (GET all, POST, GET by id, PUT, DELETE) diuji secara komprehensif pada 6 sumber daya lainnya:
@@ -587,6 +683,8 @@ B. Pada tahap ini, pengujian antarmuka pemrograman aplikasi (REST API v1) dilaku
 9. Pengujian Validasi Error dan Penanganan Respon HTTP 422:
    - Pengujian dilakukan dengan mengirimkan request body kosong `{}` pada endpoint metode POST `/api/v1/customers`.
    - Server Laravel secara otomatis mencegat permintaan tersebut dan mengembalikan status **HTTP 422 Unprocessable Entity** dengan rincian pesan error validasi yang ramah pengguna:
+
+![Gambar 6.31 Tangkapan Layar Pengujian Validasi Error (HTTP 422 Unprocessable Entity) pada Postman](screenshots/49_postman_error_422.png)
 
 ```json
 {
@@ -602,6 +700,8 @@ B. Pada tahap ini, pengujian antarmuka pemrograman aplikasi (REST API v1) dilaku
 10. Penyusunan dan Ekspor Postman Collection v2.1.0:
     - Seluruh konfigurasi pengujian didokumentasikan dan diekspor ke dalam berkas `postman/MOTOVEL_API_Collection.json`.
     - Koleksi Postman ini memuat **35 endpoint teruji** yang dikelompokkan ke dalam 7 folder modul dengan variabel lingkungan `{{base_url}} = http://127.0.0.1:8000`, siap diimpor dan dijalankan langsung oleh tim pengembang atau dosen penguji.
+
+![Gambar 6.32 Tangkapan Layar Hasil Eksekusi Postman Collection Runner (35 Endpoints Passed)](screenshots/50_postman_runner_35passed.png)
 
 
 ---
@@ -619,6 +719,8 @@ A. Pada tahap ini, repositori daring dibuat di platform GitHub sebagai wadah pen
    - Opsi inisialisasi awal seperti *Add a README file*, *Add .gitignore*, dan *Choose a license* dibiarkan kosong (*unchecked*) karena proyek telah dikembangkan secara lokal dan memiliki berkas konfigurasi tersendiri.
    - Menekan tombol **Create repository** hingga repositori daring berhasil diterbitkan.
 
+![Gambar 7.1 Tangkapan Layar Formulir Pembuatan Repositori Baru di GitHub](screenshots/51_github_create_repo.png)
+
 2. Inisialisasi Repositori Git Lokal dan Konfigurasi `.gitignore`:
    - Melalui terminal di dalam direktori `D:\Xampp\htdocs\motovel`, perintah `git init` dijalankan untuk menginisialisasi Git lokal pada folder proyek.
    - Berkas `.gitignore` diperiksa untuk memastikan bahwa direktori dependensi pihak ketiga (`/vendor`, `/node_modules`), berkas kredensial sensitif (`.env`), serta berkas cache sementara (`/storage/*.key`, `/public/hot`) tidak ikut terunggah ke repositori publik demi keamanan dan efisiensi ukuran berkas.
@@ -631,6 +733,8 @@ Initialized empty Git repository in D:/Xampp/htdocs/motovel/.git/
 3. Penambahan Berkas ke Staging Area dan Perekaman Riwayat Versi (Commit):
    - Perintah `git add .` dijalankan untuk memasukkan seluruh berkas struktur aplikasi, migration, model, controller, views Blade, aset Tailwind CSS, skrip pengujian, rute API, dan koleksi Postman ke dalam staging area.
    - Perintah `git commit -m "..."` dijalankan untuk merekam kondisi proyek ke dalam basis riwayat Git lokal.
+
+![Gambar 7.2 Tangkapan Layar Inisialisasi Git Lokal, Staging Area, dan Commit Riwayat](screenshots/52_git_init_commit.png)
 
 ```powershell
 PS D:\Xampp\htdocs\motovel> git add .
@@ -658,6 +762,8 @@ PS D:\Xampp\htdocs\motovel> git remote add origin https://github.com/username/mo
 5. Pengiriman Berkas Proyek ke Repositori GitHub (Push):
    - Perintah `git push -u origin main` dijalankan untuk mengunggah seluruh branch utama beserta riwayat commit ke server GitHub daring.
 
+![Gambar 7.3 Tangkapan Layar Pengiriman Kode Sumber (Git Push) ke Repositori GitHub](screenshots/53_git_push.png)
+
 ```powershell
 PS D:\Xampp\htdocs\motovel> git push -u origin main
 Enumerating objects: 185, done.
@@ -679,6 +785,8 @@ B. Pada tahap ini, fitur **Git Clone** diuji untuk menyalin dan mereplikasi repo
    - Terminal baru dibuka di luar direktori kerja utama (misalnya pada direktori uji `D:\Xampp\htdocs\test-clone`).
    - Perintah `git clone` dijalankan diikuti URL repositori GitHub proyek MOTOVEL.
 
+![Gambar 7.4 Tangkapan Layar Pengujian Kloning Repositori (Git Clone) dari GitHub](screenshots/54_git_clone.png)
+
 ```powershell
 PS D:\Xampp\htdocs\test-clone> git clone https://github.com/username/motovel.git motovel-clone
 Cloning into 'motovel-clone'...
@@ -693,6 +801,8 @@ Resolving deltas: 100% (35/35), done.
 2. Navigasi ke Direktori Hasil Kloning dan Pemeriksaan Berkas:
    - Pengembang berpindah ke dalam direktori hasil clone menggunakan perintah `cd motovel-clone`.
    - Struktur folder dan berkas diperiksa melalui File Explorer dan terminal untuk memastikan seluruh direktori `app`, `bootstrap`, `config`, `database`, `postman`, `public`, `resources`, `routes`, serta berkas `composer.json` dan `package.json` telah tersalin dengan utuh.
+
+![Gambar 7.5 Tangkapan Layar Struktur Folder dan Berkas Hasil Kloning pada Windows File Explorer](screenshots/55_git_clone_explorer.png)
 
 ```powershell
 PS D:\Xampp\htdocs\test-clone> cd motovel-clone
@@ -767,6 +877,8 @@ Database seeding completed successfully.
 
 ### A. Lampiran Migration
 #### 1. Migration Tabel Pelanggan (`database/migrations/2024_01_01_000001_create_customers_table.php`)
+
+![Lampiran Gambar A.1 Kode Sumber Migration Tabel Pelanggan](screenshots/56_code_migration_customers.png)
 ```php
 <?php
 
@@ -796,6 +908,8 @@ return new class extends Migration {
 ```
 
 #### 2. Migration Tabel Kendaraan (`database/migrations/2024_01_01_000002_create_vehicles_table.php`)
+
+![Lampiran Gambar A.2 Kode Sumber Migration Tabel Kendaraan](screenshots/57_code_migration_vehicles.png)
 ```php
 <?php
 
@@ -827,6 +941,8 @@ return new class extends Migration {
 ```
 
 #### 3. Migration Tabel Pendaftaran Servis (`database/migrations/2024_01_01_000004_create_service_registrations_table.php`)
+
+![Lampiran Gambar A.3 Kode Sumber Migration Tabel Pendaftaran Servis](screenshots/58_code_migration_services.png)
 ```php
 <?php
 
@@ -926,6 +1042,8 @@ return new class extends Migration {
 
 ### B. Lampiran Model Eloquent
 #### 1. Model Customer (`app/Models/Customer.php`)
+
+![Lampiran Gambar B.1 Kode Sumber Model Eloquent Customer](screenshots/59_code_model_customer.png)
 ```php
 <?php
 
@@ -966,6 +1084,8 @@ class Customer extends Model
 ```
 
 #### 2. Model ServiceRegistration (`app/Models/ServiceRegistration.php`)
+
+![Lampiran Gambar B.2 Kode Sumber Model Eloquent ServiceRegistration](screenshots/60_code_model_service.png)
 ```php
 <?php
 
@@ -1061,6 +1181,8 @@ class BaseApiController extends Controller
 ```
 
 #### 2. Customer API Controller (`app/Http/Controllers/Api/V1/CustomerController.php`)
+
+![Lampiran Gambar C.1 Kode Sumber Customer API Controller REST v1](screenshots/61_code_controller_api.png)
 ```php
 <?php
 
@@ -1148,6 +1270,8 @@ class CustomerController extends BaseApiController
 
 ### D. Lampiran Konfigurasi Rute
 #### 1. Rute API RESTful (`routes/api.php`)
+
+![Lampiran Gambar D.1 Kode Sumber Konfigurasi Rute REST API v1](screenshots/62_code_routes_api.png)
 ```php
 <?php
 
