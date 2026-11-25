@@ -391,7 +391,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             
             <div class="relative rounded-2xl overflow-hidden border border-[#303137] group aspect-[4/3] reveal-on-scroll">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&auto=format&fit=crop&q=80" 
+                <img src="{{ asset('images/gallery/cbr250rr-sp.jpg') }}" 
                      alt="Sepeda motor sport premium di pit MOTOVEL" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#08090B] via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
@@ -402,7 +402,7 @@
             </div>
 
             <div class="relative rounded-2xl overflow-hidden border border-[#303137] group aspect-[4/3] reveal-on-scroll reveal-delay-1">
-                <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800&auto=format&fit=crop&q=80" 
+                <img src="{{ asset('images/gallery/nmax-155.jpg') }}" 
                      alt="Maxi scooter matic premium di workshop" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#08090B] via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
@@ -413,7 +413,7 @@
             </div>
 
             <div class="relative rounded-2xl overflow-hidden border border-[#303137] group aspect-[4/3] reveal-on-scroll reveal-delay-2">
-                <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=800&auto=format&fit=crop&q=80" 
+                <img src="{{ asset('images/gallery/ninja-zx25r.jpg') }}" 
                      alt="Naked bike performa tinggi di pit bengkel" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#08090B] via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>

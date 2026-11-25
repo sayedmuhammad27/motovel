@@ -47,7 +47,7 @@
             
             <!-- Item 1: Sport -->
             <div x-show="activeTab === 'all' || activeTab === 'sport'" class="relative rounded-2xl overflow-hidden border border-[#303137] bg-[#111216] aspect-[4/3] group">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&auto=format&fit=crop&q=80" 
+                <img src="{{ asset('images/gallery/cbr250rr-sp.jpg') }}" 
                      alt="Sepeda motor sport premium" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#08090B] via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
@@ -60,7 +60,7 @@
 
             <!-- Item 2: Matic -->
             <div x-show="activeTab === 'all' || activeTab === 'matic'" class="relative rounded-2xl overflow-hidden border border-[#303137] bg-[#111216] aspect-[4/3] group">
-                <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=800&auto=format&fit=crop&q=80" 
+                <img src="{{ asset('images/gallery/nmax-155.jpg') }}" 
                      alt="Maxi Scooter Matic" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#08090B] via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
@@ -86,7 +86,7 @@
 
             <!-- Item 4: Sport -->
             <div x-show="activeTab === 'all' || activeTab === 'sport'" class="relative rounded-2xl overflow-hidden border border-[#303137] bg-[#111216] aspect-[4/3] group">
-                <img src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=800&auto=format&fit=crop&q=80" 
+                <img src="{{ asset('images/gallery/ninja-zx25r.jpg') }}" 
                      alt="Kawasaki Ninja ZX-25R 4 Silinder" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#08090B] via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
@@ -99,7 +99,7 @@
 
             <!-- Item 5: Workshop -->
             <div x-show="activeTab === 'all' || activeTab === 'workshop'" class="relative rounded-2xl overflow-hidden border border-[#303137] bg-[#111216] aspect-[4/3] group">
-                <img src="https://images.unsplash.com/photo-1630155014421-5e7d9b1b3b1b?w=800&auto=format&fit=crop&q=80" 
+                <img src="{{ asset('images/gallery/brembo-caliper.jpg') }}" 
                      alt="Inspeksi pengereman cakram" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#08090B] via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
@@ -112,7 +112,7 @@
 
             <!-- Item 6: Matic -->
             <div x-show="activeTab === 'all' || activeTab === 'matic'" class="relative rounded-2xl overflow-hidden border border-[#303137] bg-[#111216] aspect-[4/3] group">
-                <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=800&auto=format&fit=crop&q=80" 
+                <img src="{{ asset('images/gallery/pcx-160.jpg') }}" 
                      alt="Matic Honda PCX 160" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#08090B] via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
