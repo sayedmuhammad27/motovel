@@ -15,7 +15,7 @@
         </a>
 
         <div class="inline-flex items-center gap-3">
-            <a href="{{ route('admin.spareparts.edit', $sparepart->id) }}" class="inline-flex items-center gap-2 bg-[#C62828] hover:bg-[#E23B3B] text-white text-xs font-semibold py-2 px-4 rounded-xl transition-colors">
+            <a href="{{ route('admin.spareparts.edit', $sparepart->id) }}" class="inline-flex items-center gap-2 bg-[#9a1312] hover:bg-[#b91a19] text-white text-xs font-semibold py-2 px-4 rounded-xl transition-colors">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                 <span>Edit Suku Cadang</span>
             </a>
@@ -27,7 +27,7 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div>
                 <span class="text-xs uppercase tracking-wider text-[#92939A]">Kode Suku Cadang</span>
-                <div class="font-mono text-2xl font-bold text-[#E23B3B] mt-1">{{ $sparepart->sparepart_id }}</div>
+                <div class="font-mono text-2xl font-bold text-[#b91a19] mt-1">{{ $sparepart->sparepart_id }}</div>
                 <div class="text-xs text-[#92939A] mt-1">Ditambahkan: {{ $sparepart->created_at->format('d/m/Y') }}</div>
             </div>
             <div>
@@ -93,7 +93,7 @@
                 <tbody class="divide-y divide-[#303137]/60">
                     @forelse($sparepart->serviceDetails as $detail)
                         <tr class="hover:bg-[#222329]/50 transition-colors">
-                            <td class="px-6 py-3.5 font-mono font-bold text-[#E23B3B]">
+                            <td class="px-6 py-3.5 font-mono font-bold text-[#b91a19]">
                                 {{ $detail->serviceRegistration->service_id ?? '-' }}
                             </td>
                             <td class="px-6 py-3.5">

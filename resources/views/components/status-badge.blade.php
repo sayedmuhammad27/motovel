@@ -69,8 +69,8 @@
     } elseif ($type === 'role') {
         switch ($status) {
             case 'admin':
-                $classes = 'bg-[#C62828]/15 text-[#E23B3B] border-[#C62828]/40';
-                $dotColor = 'bg-[#C62828]';
+                $classes = 'bg-[#9a1312]/15 text-[#b91a19] border-[#9a1312]/40';
+                $dotColor = 'bg-[#9a1312]';
                 $label = 'Administrator';
                 break;
             case 'petugas':

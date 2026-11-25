@@ -19,7 +19,7 @@
                                name="search" 
                                value="{{ $search }}" 
                                placeholder="ID Servis, plat motor, nama, mekanik..." 
-                               class="w-full bg-[#111216] border border-[#303137] rounded-xl pl-9 pr-4 py-2.5 text-xs text-[#F4F2EF] placeholder-[#92939A]/50 focus:outline-none focus:border-[#C62828]">
+                               class="w-full bg-[#111216] border border-[#303137] rounded-xl pl-9 pr-4 py-2.5 text-xs text-[#F4F2EF] placeholder-[#92939A]/50 focus:outline-none focus:border-[#9a1312]">
                         <svg class="w-4 h-4 text-[#92939A] absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
@@ -29,7 +29,7 @@
                 <!-- Status Servis -->
                 <div>
                     <label class="block text-[11px] uppercase tracking-wider text-[#92939A] mb-1 font-semibold">Status Servis</label>
-                    <select name="service_status" class="w-full bg-[#111216] border border-[#303137] rounded-xl px-3 py-2.5 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#C62828]">
+                    <select name="service_status" class="w-full bg-[#111216] border border-[#303137] rounded-xl px-3 py-2.5 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]">
                         <option value="">Semua Status</option>
                         <option value="completed" {{ $serviceStatus === 'completed' ? 'selected' : '' }}>Selesai (Completed)</option>
                         <option value="in_progress" {{ $serviceStatus === 'in_progress' ? 'selected' : '' }}>Pengerjaan</option>
@@ -41,7 +41,7 @@
                 <!-- Status Kasir -->
                 <div>
                     <label class="block text-[11px] uppercase tracking-wider text-[#92939A] mb-1 font-semibold">Status Pembayaran</label>
-                    <select name="payment_status" class="w-full bg-[#111216] border border-[#303137] rounded-xl px-3 py-2.5 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#C62828]">
+                    <select name="payment_status" class="w-full bg-[#111216] border border-[#303137] rounded-xl px-3 py-2.5 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]">
                         <option value="">Semua Status Kasir</option>
                         <option value="paid" {{ $paymentStatus === 'paid' ? 'selected' : '' }}>Lunas (Paid)</option>
                         <option value="pending" {{ $paymentStatus === 'pending' ? 'selected' : '' }}>Pending</option>
@@ -54,7 +54,7 @@
                     <input type="date" 
                            name="start_date" 
                            value="{{ $startDate }}" 
-                           class="w-full bg-[#111216] border border-[#303137] rounded-xl px-3 py-2.5 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#C62828]">
+                           class="w-full bg-[#111216] border border-[#303137] rounded-xl px-3 py-2.5 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]">
                 </div>
             </div>
 
@@ -65,14 +65,14 @@
                     <input type="date" 
                            name="end_date" 
                            value="{{ $endDate }}" 
-                           class="bg-[#111216] border border-[#303137] rounded-xl px-3 py-2 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#C62828]">
+                           class="bg-[#111216] border border-[#303137] rounded-xl px-3 py-2 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]">
                 </div>
 
                 <div class="flex items-center gap-3">
                     @if($search || $serviceStatus || $paymentStatus || $startDate || $endDate)
                         <a href="{{ route('admin.history') }}" class="text-xs text-[#92939A] hover:text-[#F4F2EF] px-3 py-2">Reset Filter</a>
                     @endif
-                    <button type="submit" class="bg-[#C62828] hover:bg-[#E23B3B] text-white text-xs uppercase tracking-wider font-semibold py-2 px-5 rounded-xl transition-colors">
+                    <button type="submit" class="bg-[#9a1312] hover:bg-[#b91a19] text-white text-xs uppercase tracking-wider font-semibold py-2 px-5 rounded-xl transition-colors">
                         Terapkan Filter
                     </button>
                 </div>
@@ -100,7 +100,7 @@
                 <tbody class="divide-y divide-[#303137]/60">
                     @forelse($services as $s)
                         <tr class="hover:bg-[#222329]/50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-xs font-bold text-[#E23B3B]">
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-xs font-bold text-[#b91a19]">
                                 <a href="{{ route('admin.services.show', $s->id) }}" class="hover:underline">
                                     {{ $s->service_id }}
                                 </a>

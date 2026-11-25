@@ -16,14 +16,14 @@
                        name="search" 
                        value="{{ $search }}" 
                        placeholder="Cari ID Servis, plat motor, nama pemilik..." 
-                       class="w-full bg-[#191A1F] border border-[#303137] rounded-xl pl-10 pr-4 py-2.5 text-xs text-[#F4F2EF] placeholder-[#92939A]/50 focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]">
+                       class="w-full bg-[#191A1F] border border-[#303137] rounded-xl pl-10 pr-4 py-2.5 text-xs text-[#F4F2EF] placeholder-[#92939A]/50 focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]">
                 <svg class="w-4 h-4 text-[#92939A] absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
             </div>
 
             <!-- Status Dropdown Filter -->
-            <select name="status" onchange="this.form.submit()" class="bg-[#191A1F] border border-[#303137] rounded-xl px-3 py-2.5 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#C62828]">
+            <select name="status" onchange="this.form.submit()" class="bg-[#191A1F] border border-[#303137] rounded-xl px-3 py-2.5 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]">
                 <option value="">Semua Status Servis</option>
                 <option value="waiting" {{ $status === 'waiting' ? 'selected' : '' }}>Menunggu (Waiting)</option>
                 <option value="in_progress" {{ $status === 'in_progress' ? 'selected' : '' }}>Dikerjakan (In Progress)</option>
@@ -37,7 +37,7 @@
         </form>
 
         <!-- Tambah Button -->
-        <a href="{{ route('admin.services.create') }}" class="inline-flex items-center justify-center gap-2 bg-[#C62828] hover:bg-[#E23B3B] text-white text-xs uppercase tracking-wider font-semibold py-2.5 px-5 rounded-xl shadow-md transition-colors whitespace-nowrap">
+        <a href="{{ route('admin.services.create') }}" class="inline-flex items-center justify-center gap-2 bg-[#9a1312] hover:bg-[#b91a19] text-white text-xs uppercase tracking-wider font-semibold py-2.5 px-5 rounded-xl shadow-md transition-colors whitespace-nowrap">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
@@ -64,7 +64,7 @@
                 <tbody class="divide-y divide-[#303137]/60">
                     @forelse($services as $s)
                         <tr class="hover:bg-[#222329]/50 transition-colors">
-                            <td class="px-6 py-4 whitespace-nowrap font-mono text-xs font-bold text-[#E23B3B]">
+                            <td class="px-6 py-4 whitespace-nowrap font-mono text-xs font-bold text-[#b91a19]">
                                 <a href="{{ route('admin.services.show', $s->id) }}" class="hover:underline">
                                     {{ $s->service_id }}
                                 </a>
@@ -116,7 +116,7 @@
                                     <form action="{{ route('admin.services.destroy', $s->id) }}" method="POST" class="inline" onsubmit="return confirm('Apakah Anda yakin ingin membatalkan/menghapus pendaftaran servis {{ $s->service_id }}?');">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="text-zinc-500 hover:text-[#E23B3B] transition-colors" title="Hapus Servis">
+                                        <button type="submit" class="text-zinc-500 hover:text-[#b91a19] transition-colors" title="Hapus Servis">
                                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                                         </button>
                                     </form>

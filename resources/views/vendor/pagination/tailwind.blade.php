@@ -64,7 +64,7 @@
                             @foreach ($element as $page => $url)
                                 @if ($page == $paginator->currentPage())
                                     <span aria-current="page">
-                                        <span class="relative inline-flex items-center px-3 py-1.5 text-xs font-bold text-white bg-[#C62828] border border-[#C62828] rounded-md">{{ $page }}</span>
+                                        <span class="relative inline-flex items-center px-3 py-1.5 text-xs font-bold text-white bg-[#9a1312] border border-[#9a1312] rounded-md">{{ $page }}</span>
                                     </span>
                                 @else
                                     <a href="{{ $url }}" class="relative inline-flex items-center px-3 py-1.5 text-xs font-medium text-[#92939A] bg-[#191A1F] border border-[#303137] rounded-md hover:bg-[#222329] hover:text-[#F4F2EF]" aria-label="Halaman {{ $page }}">

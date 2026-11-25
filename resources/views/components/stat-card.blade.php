@@ -8,13 +8,13 @@
 
 @php
     $accentMap = [
-        'red' => 'from-[#C62828]/20 to-transparent border-[#C62828]/30 text-[#E23B3B]',
+        'red' => 'from-[#9a1312]/20 to-transparent border-[#9a1312]/30 text-[#b91a19]',
         'emerald' => 'from-emerald-500/20 to-transparent border-emerald-500/30 text-emerald-400',
         'blue' => 'from-blue-500/20 to-transparent border-blue-500/30 text-blue-400',
         'amber' => 'from-amber-500/20 to-transparent border-amber-500/30 text-amber-400',
     ];
     $iconBg = [
-        'red' => 'bg-[#C62828]/10 text-[#E23B3B] border-[#C62828]/20',
+        'red' => 'bg-[#9a1312]/10 text-[#b91a19] border-[#9a1312]/20',
         'emerald' => 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
         'blue' => 'bg-blue-500/10 text-blue-400 border-blue-500/20',
         'amber' => 'bg-amber-500/10 text-amber-400 border-amber-500/20',

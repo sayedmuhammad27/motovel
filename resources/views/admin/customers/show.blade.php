@@ -10,13 +10,13 @@
     <!-- Top Card & Actions -->
     <div class="bg-[#191A1F] border border-[#303137] rounded-2xl p-6 sm:p-8 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div class="flex items-center gap-5">
-            <div class="w-16 h-16 rounded-2xl bg-[#C62828] text-white flex items-center justify-center font-display text-3xl font-bold shadow-lg shadow-[#C62828]/30">
+            <div class="w-16 h-16 rounded-2xl bg-[#9a1312] text-white flex items-center justify-center font-display text-3xl font-bold shadow-lg shadow-[#9a1312]/30">
                 {{ strtoupper(substr($customer->name, 0, 1)) }}
             </div>
             <div>
                 <div class="flex items-center gap-3">
                     <h2 class="font-display text-2xl font-bold text-[#F4F2EF]">{{ $customer->name }}</h2>
-                    <span class="font-mono text-xs font-bold text-[#E23B3B] bg-[#C62828]/10 px-2.5 py-0.5 rounded">{{ $customer->customer_id }}</span>
+                    <span class="font-mono text-xs font-bold text-[#b91a19] bg-[#9a1312]/10 px-2.5 py-0.5 rounded">{{ $customer->customer_id }}</span>
                 </div>
                 <p class="text-xs text-[#92939A] mt-1">{{ $customer->occupation }} • Terdaftar sejak {{ $customer->created_at->format('d F Y') }}</p>
             </div>
@@ -26,7 +26,7 @@
             <a href="{{ route('admin.customers.edit', $customer->id) }}" class="bg-[#222329] hover:bg-[#303137] text-[#F4F2EF] text-xs uppercase tracking-wider font-semibold py-2.5 px-5 rounded-xl border border-[#303137] transition-colors">
                 Edit Profil
             </a>
-            <a href="{{ route('admin.vehicles.create') }}?customer_id={{ $customer->id }}" class="bg-[#C62828] hover:bg-[#E23B3B] text-white text-xs uppercase tracking-wider font-semibold py-2.5 px-5 rounded-xl shadow-md transition-colors">
+            <a href="{{ route('admin.vehicles.create') }}?customer_id={{ $customer->id }}" class="bg-[#9a1312] hover:bg-[#b91a19] text-white text-xs uppercase tracking-wider font-semibold py-2.5 px-5 rounded-xl shadow-md transition-colors">
                 + Tambah Motor
             </a>
         </div>
@@ -54,7 +54,7 @@
     <div class="bg-[#191A1F] border border-[#303137] rounded-2xl p-6 shadow-xl space-y-4">
         <div class="flex items-center justify-between border-b border-[#303137] pb-4">
             <h3 class="font-display text-xl font-bold text-[#F4F2EF]">Sepeda Motor Terdaftar ({{ $customer->vehicles->count() }} Unit)</h3>
-            <a href="{{ route('admin.vehicles.create') }}?customer_id={{ $customer->id }}" class="text-xs text-[#E23B3B] font-semibold hover:underline">+ Daftarkan Motor Baru</a>
+            <a href="{{ route('admin.vehicles.create') }}?customer_id={{ $customer->id }}" class="text-xs text-[#b91a19] font-semibold hover:underline">+ Daftarkan Motor Baru</a>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -67,11 +67,11 @@
                     <div class="text-xs text-[#92939A] space-y-1">
                         <p>No. STNK: <span class="font-mono text-[#F4F2EF]">{{ $v->stnk_number }}</span></p>
                         <p>Tahun: <span class="text-[#F4F2EF]">{{ $v->year }}</span> | Warna: <span class="text-[#F4F2EF]">{{ $v->color }}</span></p>
-                        <p>Total Servis: <span class="text-[#E23B3B] font-semibold">{{ $v->serviceRegistrations->count() }} kali</span></p>
+                        <p>Total Servis: <span class="text-[#b91a19] font-semibold">{{ $v->serviceRegistrations->count() }} kali</span></p>
                     </div>
                     <div class="pt-2 border-t border-[#303137] flex justify-between items-center text-xs">
                         <a href="{{ route('admin.vehicles.show', $v->id) }}" class="text-[#92939A] hover:text-[#F4F2EF]">Detail Motor →</a>
-                        <a href="{{ route('admin.services.create') }}?vehicle_id={{ $v->id }}" class="text-[#E23B3B] font-semibold">+ Buka Servis</a>
+                        <a href="{{ route('admin.services.create') }}?vehicle_id={{ $v->id }}" class="text-[#b91a19] font-semibold">+ Buka Servis</a>
                     </div>
                 </div>
             @empty
@@ -113,7 +113,7 @@
                                 @endif
                             </td>
                             <td class="px-4 py-3 text-right">
-                                <a href="{{ route('admin.services.show', $srv->id) }}" class="text-[#E23B3B] font-semibold hover:underline">Detail</a>
+                                <a href="{{ route('admin.services.show', $srv->id) }}" class="text-[#b91a19] font-semibold hover:underline">Detail</a>
                             </td>
                         </tr>
                     @empty

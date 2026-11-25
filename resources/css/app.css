@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap');
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -12,14 +12,16 @@
     --color-moto-card: #191A1F;
     --color-moto-surface: #222329;
     --color-moto-border: #303137;
-    --color-moto-accent: #C62828;
-    --color-moto-accent-hover: #E23B3B;
+    --color-moto-accent: #9a1312;
+    --color-moto-accent-hover: #b91a19;
     --color-moto-text: #F4F2EF;
     --color-moto-muted: #92939A;
 
     --font-display: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
-    --font-sans: 'Cinzel', Georgia, serif;
-    --font-body: 'Cinzel', Georgia, serif;
+    --font-heading: 'Cinzel', 'Cinzel Decorative', Georgia, serif;
+    --font-sans: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-body: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-secondary: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Custom Base Styles */
@@ -30,7 +32,7 @@
 body {
     background-color: var(--color-moto-bg);
     background-image: 
-        radial-gradient(ellipse at top center, rgba(198, 40, 40, 0.22) 0%, transparent 60%),
+        radial-gradient(ellipse at top center, rgba(154, 19, 18, 0.22) 0%, transparent 60%),
         linear-gradient(to bottom, rgba(8, 9, 11, 0.78), rgba(8, 9, 11, 0.88)),
         url('/images/bg-website.jpg');
     background-size: cover;
@@ -38,7 +40,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: var(--color-moto-text);
-    font-family: 'Cinzel', Georgia, serif;
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
 }
 
@@ -46,6 +48,11 @@ body {
 h1, h2, h3, h4, h5, h6, .font-display {
     font-family: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
     letter-spacing: 0.03em;
+}
+
+/* Secondary Typography with Montserrat */
+p, span, label, input, select, textarea, td, th, li, .font-sans, .font-secondary {
+    font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
 }
 
 /* Custom Scrollbar */
@@ -64,16 +71,16 @@ h1, h2, h3, h4, h5, h6, .font-display {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #C62828;
+    background: #9a1312;
 }
 
 /* Luxury Accents */
 .accent-border-glow {
-    box-shadow: 0 0 25px -5px rgba(198, 40, 40, 0.45);
+    box-shadow: 0 0 25px -5px rgba(154, 19, 18, 0.5);
 }
 
 .text-gradient-gold {
-    background: linear-gradient(135deg, #F4F2EF 30%, #E23B3B 100%);
+    background: linear-gradient(135deg, #F4F2EF 30%, #b91a19 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -84,6 +91,222 @@ h1, h2, h3, h4, h5, h6, .font-display {
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border: 1px solid #303137;
+}
+
+/* ========================================================================= */
+/* ANIMATED LUXURY MARBLE BUTTONS (RED & GREY)                               */
+/* ========================================================================= */
+
+.btn-moto-red,
+.btn-moto-grey {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    border-radius: 12px;
+    padding: 0.75rem 1.75rem;
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+    user-select: none;
+    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.22s ease;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65);
+    z-index: 1;
+}
+
+/* Animated diagonal gleam / shimmer sweep */
+.btn-moto-red::before,
+.btn-moto-grey::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.45) 50%, 
+        transparent
+    );
+    transform: skewX(-25deg);
+    pointer-events: none;
+    transition: none;
+    z-index: 2;
+}
+
+.btn-moto-red:hover::before,
+.btn-moto-grey:hover::before {
+    left: 160%;
+    transition: left 0.75s ease-in-out;
+}
+
+/* 1. RED BUTTON (Dark Red Swirl + 3D Shadow + Shimmer Animation) */
+.btn-moto-red,
+a.bg-\[\#9a1312\],
+button.bg-\[\#9a1312\],
+.btn-primary,
+.btn-print,
+button[type="submit"]:not(.bg-\[\#191A1F\]):not(.bg-\[\#222329\]):not(.btn-moto-grey) {
+    color: #ffffff !important;
+    background-color: #9a1312 !important;
+    background-image: url('/images/buttons/btn-red-texture.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    border-radius: 12px !important;
+    box-shadow: 
+        0 4px 14px rgba(154, 19, 18, 0.45),
+        3px 4px 0px rgba(75, 8, 8, 0.9) !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.22s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.btn-moto-red:hover,
+a.bg-\[\#9a1312\]:hover,
+button.bg-\[\#9a1312\]:hover,
+.btn-primary:hover,
+.btn-print:hover,
+button[type="submit"]:hover {
+    color: #ffffff !important;
+    transform: translateY(-2px) translateX(-1px) !important;
+    box-shadow: 
+        0 8px 24px rgba(154, 19, 18, 0.7),
+        4px 6px 0px rgba(60, 5, 5, 0.95) !important;
+    filter: brightness(1.1) !important;
+}
+
+.btn-moto-red:active,
+a.bg-\[\#9a1312\]:active,
+button.bg-\[\#9a1312\]:active,
+.btn-primary:active,
+.btn-print:active,
+button[type="submit"]:active {
+    transform: translateY(2px) translateX(2px) !important;
+    box-shadow: 
+        0 2px 6px rgba(154, 19, 18, 0.4),
+        1px 1px 0px rgba(60, 5, 5, 0.95) !important;
+    filter: brightness(0.95) !important;
+}
+
+/* 2. GREY / BLACK BUTTON (Metallic Smoke Swirl + 3D Shadow + Shimmer Animation) */
+.btn-moto-grey,
+a.bg-\[\#191A1F\],
+button.bg-\[\#191A1F\],
+a.bg-\[\#222329\],
+button.bg-\[\#222329\],
+.btn-secondary,
+.btn-back,
+a[href*="#services-section"] {
+    color: #ffffff !important;
+    background-color: #1f232b !important;
+    background-image: url('/images/buttons/btn-grey-texture.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 12px !important;
+    box-shadow: 
+        0 4px 14px rgba(0, 0, 0, 0.55),
+        3px 4px 0px rgba(16, 18, 22, 0.95) !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.22s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.btn-moto-grey:hover,
+a.bg-\[\#191A1F\]:hover,
+button.bg-\[\#191A1F\]:hover,
+a.bg-\[\#222329\]:hover,
+button.bg-\[\#222329\]:hover,
+.btn-secondary:hover,
+.btn-back:hover,
+a[href*="#services-section"]:hover {
+    color: #ffffff !important;
+    transform: translateY(-2px) translateX(-1px) !important;
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.75),
+        4px 6px 0px rgba(10, 12, 16, 1) !important;
+    filter: brightness(1.15) !important;
+}
+
+.btn-moto-grey:active,
+a.bg-\[\#191A1F\]:active,
+button.bg-\[\#191A1F\]:active,
+a.bg-\[\#222329\]:active,
+button.bg-\[\#222329\]:active,
+.btn-secondary:active,
+.btn-back:active,
+a[href*="#services-section"]:active {
+    transform: translateY(2px) translateX(2px) !important;
+    box-shadow: 
+        0 2px 6px rgba(0, 0, 0, 0.4),
+        1px 1px 0px rgba(10, 12, 16, 1) !important;
+    filter: brightness(0.95) !important;
+}
+
+/* Shimmer gleam for auto-targeted buttons */
+a.bg-\[\#9a1312\]::before,
+button.bg-\[\#9a1312\]::before,
+a.bg-\[\#191A1F\]::before,
+button.bg-\[\#191A1F\]::before,
+a.bg-\[\#222329\]::before,
+button.bg-\[\#222329\]::before,
+.btn-primary::before,
+.btn-secondary::before,
+.btn-print::before,
+button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.45) 50%, 
+        transparent
+    );
+    transform: skewX(-25deg);
+    pointer-events: none;
+    transition: none;
+    z-index: 2;
+}
+
+a.bg-\[\#9a1312\]:hover::before,
+button.bg-\[\#9a1312\]:hover::before,
+a.bg-\[\#191A1F\]:hover::before,
+button.bg-\[\#191A1F\]:hover::before,
+a.bg-\[\#222329\]:hover::before,
+button.bg-\[\#222329\]:hover::before,
+.btn-primary:hover::before,
+.btn-secondary:hover::before,
+.btn-print:hover::before,
+button[type="submit"]:hover::before {
+    left: 160%;
+    transition: left 0.75s ease-in-out;
 }
 
 /* Animation utilities */
@@ -108,7 +331,7 @@ h1, h2, h3, h4, h5, h6, .font-display {
 
 /* Global Accessible Focus Indicators for Keyboard Navigation */
 :focus-visible {
-    outline: 2px solid #C62828 !important;
+    outline: 2px solid #9a1312 !important;
     outline-offset: 2px !important;
 }
 
@@ -117,7 +340,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-    outline: 2px solid #E23B3B !important;
+    outline: 2px solid #b91a19 !important;
     outline-offset: 2px !important;
 }
 

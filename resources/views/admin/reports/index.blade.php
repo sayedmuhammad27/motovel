@@ -13,23 +13,23 @@
             <!-- Tabs Laporan -->
             <div class="flex flex-wrap gap-2 pb-4 border-b border-[#303137]">
                 <a href="{{ route('admin.reports', ['type' => 'revenue', 'start_date' => $startDate, 'end_date' => $endDate]) }}" 
-                   class="px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all {{ $reportType === 'revenue' ? 'bg-[#C62828] text-white shadow-lg' : 'bg-[#111216] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]' }}">
+                   class="px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all {{ $reportType === 'revenue' ? 'bg-[#9a1312] text-white shadow-lg' : 'bg-[#111216] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]' }}">
                     1. Pendapatan & Kasir
                 </a>
                 <a href="{{ route('admin.reports', ['type' => 'services', 'start_date' => $startDate, 'end_date' => $endDate]) }}" 
-                   class="px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all {{ $reportType === 'services' ? 'bg-[#C62828] text-white shadow-lg' : 'bg-[#111216] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]' }}">
+                   class="px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all {{ $reportType === 'services' ? 'bg-[#9a1312] text-white shadow-lg' : 'bg-[#111216] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]' }}">
                     2. Pengerjaan Servis
                 </a>
                 <a href="{{ route('admin.reports', ['type' => 'spareparts', 'start_date' => $startDate, 'end_date' => $endDate]) }}" 
-                   class="px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all {{ $reportType === 'spareparts' ? 'bg-[#C62828] text-white shadow-lg' : 'bg-[#111216] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]' }}">
+                   class="px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all {{ $reportType === 'spareparts' ? 'bg-[#9a1312] text-white shadow-lg' : 'bg-[#111216] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]' }}">
                     3. Pemakaian Suku Cadang
                 </a>
                 <a href="{{ route('admin.reports', ['type' => 'customers', 'start_date' => $startDate, 'end_date' => $endDate]) }}" 
-                   class="px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all {{ $reportType === 'customers' ? 'bg-[#C62828] text-white shadow-lg' : 'bg-[#111216] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]' }}">
+                   class="px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all {{ $reportType === 'customers' ? 'bg-[#9a1312] text-white shadow-lg' : 'bg-[#111216] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]' }}">
                     4. Data Pelanggan Baru
                 </a>
                 <a href="{{ route('admin.reports', ['type' => 'vehicles', 'start_date' => $startDate, 'end_date' => $endDate]) }}" 
-                   class="px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all {{ $reportType === 'vehicles' ? 'bg-[#C62828] text-white shadow-lg' : 'bg-[#111216] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]' }}">
+                   class="px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all {{ $reportType === 'vehicles' ? 'bg-[#9a1312] text-white shadow-lg' : 'bg-[#111216] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]' }}">
                     5. Unit Sepeda Motor
                 </a>
             </div>
@@ -41,10 +41,10 @@
                 <div class="flex flex-wrap items-center gap-3">
                     <div class="flex items-center gap-2">
                         <span class="text-xs text-[#92939A]">Periode:</span>
-                        <input type="date" name="start_date" value="{{ $startDate }}" class="bg-[#111216] border border-[#303137] rounded-xl px-3 py-2 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#C62828]">
+                        <input type="date" name="start_date" value="{{ $startDate }}" class="bg-[#111216] border border-[#303137] rounded-xl px-3 py-2 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]">
                     </div>
                     <span class="text-xs text-[#92939A]">s/d</span>
-                    <input type="date" name="end_date" value="{{ $endDate }}" class="bg-[#111216] border border-[#303137] rounded-xl px-3 py-2 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#C62828]">
+                    <input type="date" name="end_date" value="{{ $endDate }}" class="bg-[#111216] border border-[#303137] rounded-xl px-3 py-2 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]">
 
                     <button type="submit" class="bg-[#222329] hover:bg-[#303137] text-white text-xs font-semibold py-2 px-4 rounded-xl border border-[#303137] transition-colors">
                         Tampilkan Laporan
@@ -52,7 +52,7 @@
                 </div>
 
                 <!-- Print Link Button -->
-                <a href="{{ route('admin.reports.print', ['type' => $reportType, 'start_date' => $startDate, 'end_date' => $endDate]) }}" target="_blank" class="inline-flex items-center gap-2 bg-[#C62828] hover:bg-[#E23B3B] text-white text-xs uppercase tracking-wider font-semibold py-2.5 px-5 rounded-xl shadow-md transition-colors">
+                <a href="{{ route('admin.reports.print', ['type' => $reportType, 'start_date' => $startDate, 'end_date' => $endDate]) }}" target="_blank" class="inline-flex items-center gap-2 bg-[#9a1312] hover:bg-[#b91a19] text-white text-xs uppercase tracking-wider font-semibold py-2.5 px-5 rounded-xl shadow-md transition-colors">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
                     <span>Cetak Dokumen Resmi</span>
                 </a>
@@ -101,7 +101,7 @@
                     <tbody class="divide-y divide-[#303137]/60">
                         @forelse($data['records'] as $r)
                             <tr class="hover:bg-[#222329]/50 transition-colors">
-                                <td class="px-6 py-4 font-mono text-xs font-bold text-[#E23B3B]">{{ $r->payment_id }}</td>
+                                <td class="px-6 py-4 font-mono text-xs font-bold text-[#b91a19]">{{ $r->payment_id }}</td>
                                 <td class="px-6 py-4 font-mono text-xs text-[#F4F2EF]">{{ $r->serviceRegistration->service_id ?? '-' }}</td>
                                 <td class="px-6 py-4 text-xs text-[#F4F2EF]">{{ $r->serviceRegistration->customer->name ?? '-' }}</td>
                                 <td class="px-6 py-4 text-xs font-mono font-bold text-[#F4F2EF]">{{ $r->serviceRegistration->vehicle->plate_number ?? '-' }}</td>
@@ -166,7 +166,7 @@
                     <tbody class="divide-y divide-[#303137]/60">
                         @forelse($data['records'] as $s)
                             <tr class="hover:bg-[#222329]/50 transition-colors">
-                                <td class="px-6 py-4 font-mono text-xs font-bold text-[#E23B3B]">{{ $s->service_id }}</td>
+                                <td class="px-6 py-4 font-mono text-xs font-bold text-[#b91a19]">{{ $s->service_id }}</td>
                                 <td class="px-6 py-4 font-mono text-xs text-[#F4F2EF]">{{ \Carbon\Carbon::parse($s->service_date)->format('d/m/Y') }}</td>
                                 <td class="px-6 py-4 font-mono font-bold text-xs text-[#F4F2EF]">{{ $s->vehicle->plate_number ?? '-' }}</td>
                                 <td class="px-6 py-4 text-xs text-[#F4F2EF]">{{ $s->customer->name ?? '-' }}</td>
@@ -194,7 +194,7 @@
             </div>
             <div class="p-5 rounded-2xl bg-[#191A1F] border border-[#303137]">
                 <span class="text-xs uppercase tracking-wider text-[#92939A]">Total Nilai Penggunaan Suku Cadang</span>
-                <div class="font-mono text-xl font-bold text-[#E23B3B] mt-1">Rp {{ number_format($data['totalValue'] ?? 0, 0, ',', '.') }}</div>
+                <div class="font-mono text-xl font-bold text-[#b91a19] mt-1">Rp {{ number_format($data['totalValue'] ?? 0, 0, ',', '.') }}</div>
             </div>
         </div>
 
@@ -251,7 +251,7 @@
                     <tbody class="divide-y divide-[#303137]/60">
                         @forelse($data['records'] as $c)
                             <tr class="hover:bg-[#222329]/50 transition-colors">
-                                <td class="px-6 py-4 font-mono text-xs font-bold text-[#E23B3B]">{{ $c->customer_id }}</td>
+                                <td class="px-6 py-4 font-mono text-xs font-bold text-[#b91a19]">{{ $c->customer_id }}</td>
                                 <td class="px-6 py-4 font-medium text-xs text-[#F4F2EF]">{{ $c->name }}</td>
                                 <td class="px-6 py-4 font-mono text-xs text-[#F4F2EF]">{{ $c->phone }}</td>
                                 <td class="px-6 py-4 text-xs">{{ $c->occupation }}</td>
@@ -300,7 +300,7 @@
                                 <td class="px-6 py-4 text-xs font-medium text-[#F4F2EF]">{{ $v->brand }} {{ $v->model }}</td>
                                 <td class="px-6 py-4 text-xs text-[#92939A]">{{ $v->customer->name ?? '-' }}</td>
                                 <td class="px-6 py-4 text-xs uppercase">{{ $v->type }}</td>
-                                <td class="px-6 py-4 text-center font-mono text-xs font-bold text-[#E23B3B]">{{ $v->service_registrations_count }}x</td>
+                                <td class="px-6 py-4 text-center font-mono text-xs font-bold text-[#b91a19]">{{ $v->service_registrations_count }}x</td>
                             </tr>
                         @empty
                             <tr><td colspan="5" class="px-6 py-8 text-center text-xs text-[#92939A]">Tidak ada data sepeda motor pada periode ini.</td></tr>

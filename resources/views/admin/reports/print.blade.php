@@ -6,7 +6,7 @@
     <title>Laporan Resmi {{ ucfirst($reportType) }} | MOTOVEL Service Center</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -14,7 +14,7 @@
             padding: 0;
         }
         body {
-            font-family: 'Cinzel', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: #f4f4f5;
             color: #18181b;
             padding: 24px;
@@ -45,7 +45,7 @@
             letter-spacing: 0.5px;
         }
         .brand span {
-            color: #c62828;
+            color: #9a1312;
         }
         .subtitle {
             font-size: 11px;
@@ -157,7 +157,7 @@
             align-items: center;
         }
         .btn-print {
-            background-color: #c62828;
+            background-color: #9a1312;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -330,7 +330,7 @@
                 </div>
                 <div class="kpi-card">
                     <div class="kpi-label">Total Nilai Pemakaian</div>
-                    <div class="kpi-value" style="color: #c62828;">Rp {{ number_format($data['totalValue'] ?? 0, 0, ',', '.') }}</div>
+                    <div class="kpi-value" style="color: #9a1312;">Rp {{ number_format($data['totalValue'] ?? 0, 0, ',', '.') }}</div>
                 </div>
             </div>
 

@@ -9,7 +9,7 @@
 
         <!-- Header -->
         <div class="max-w-3xl space-y-4">
-            <span class="text-xs uppercase tracking-[0.25em] text-[#C62828] font-bold">Showcase Portofolio</span>
+            <span class="text-xs uppercase tracking-[0.25em] text-[#9a1312] font-bold">Showcase Portofolio</span>
             <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-[#F4F2EF] leading-tight">
                 Galeri Motor & Aktivitas Bengkel
             </h1>
@@ -21,22 +21,22 @@
         <!-- Filter Tabs -->
         <div class="flex flex-wrap items-center gap-2 sm:gap-3 border-b border-[#303137] pb-6">
             <button @click="activeTab = 'all'" 
-                    :class="activeTab === 'all' ? 'bg-[#C62828] text-white font-semibold' : 'bg-[#191A1F] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]'"
+                    :class="activeTab === 'all' ? 'bg-[#9a1312] text-white font-semibold' : 'bg-[#191A1F] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]'"
                     class="px-5 py-2.5 rounded-full text-xs uppercase tracking-wider transition-all">
                 Semua Koleksi
             </button>
             <button @click="activeTab = 'sport'" 
-                    :class="activeTab === 'sport' ? 'bg-[#C62828] text-white font-semibold' : 'bg-[#191A1F] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]'"
+                    :class="activeTab === 'sport' ? 'bg-[#9a1312] text-white font-semibold' : 'bg-[#191A1F] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]'"
                     class="px-5 py-2.5 rounded-full text-xs uppercase tracking-wider transition-all">
                 Motor Sport
             </button>
             <button @click="activeTab = 'matic'" 
-                    :class="activeTab === 'matic' ? 'bg-[#C62828] text-white font-semibold' : 'bg-[#191A1F] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]'"
+                    :class="activeTab === 'matic' ? 'bg-[#9a1312] text-white font-semibold' : 'bg-[#191A1F] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]'"
                     class="px-5 py-2.5 rounded-full text-xs uppercase tracking-wider transition-all">
                 Maxi Scooter
             </button>
             <button @click="activeTab = 'workshop'" 
-                    :class="activeTab === 'workshop' ? 'bg-[#C62828] text-white font-semibold' : 'bg-[#191A1F] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]'"
+                    :class="activeTab === 'workshop' ? 'bg-[#9a1312] text-white font-semibold' : 'bg-[#191A1F] text-[#92939A] hover:text-[#F4F2EF] border border-[#303137]'"
                     class="px-5 py-2.5 rounded-full text-xs uppercase tracking-wider transition-all">
                 Aktivitas Bengkel
             </button>
@@ -52,7 +52,7 @@
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#08090B] via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
                 <div class="absolute bottom-5 left-5 right-5 space-y-1">
-                    <span class="text-[10px] uppercase tracking-wider text-[#C62828] font-bold">Sport Series</span>
+                    <span class="text-[10px] uppercase tracking-wider text-[#9a1312] font-bold">Sport Series</span>
                     <h3 class="font-display text-xl font-bold text-[#F4F2EF]">Honda CBR250RR SP</h3>
                     <p class="text-xs text-[#92939A]">Pembersihan Throttle Body & Penggantian Filter K&N</p>
                 </div>
@@ -91,7 +91,7 @@
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#08090B] via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
                 <div class="absolute bottom-5 left-5 right-5 space-y-1">
-                    <span class="text-[10px] uppercase tracking-wider text-[#C62828] font-bold">4-Cylinder Screamer</span>
+                    <span class="text-[10px] uppercase tracking-wider text-[#9a1312] font-bold">4-Cylinder Screamer</span>
                     <h3 class="font-display text-xl font-bold text-[#F4F2EF]">Kawasaki Ninja ZX-25R</h3>
                     <p class="text-xs text-[#92939A]">Servis 10.000 KM & Penggantian Oli Motul 7100 Ester</p>
                 </div>

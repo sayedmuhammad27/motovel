@@ -46,7 +46,7 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
             <div>
                 <span class="text-xs uppercase tracking-wider text-[#92939A]">Nomor Pendaftaran</span>
-                <h3 class="font-mono text-2xl font-bold text-[#E23B3B] mt-1">{{ $service->service_id }}</h3>
+                <h3 class="font-mono text-2xl font-bold text-[#b91a19] mt-1">{{ $service->service_id }}</h3>
                 <p class="text-xs text-[#92939A] mt-1">Registrasi: {{ $service->created_at->translatedFormat('d F Y, H:i') }}</p>
             </div>
             <div>
@@ -96,7 +96,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Motor Card -->
         <div class="bg-[#191A1F] border border-[#303137] rounded-2xl p-6 shadow-xl">
-            <h4 class="text-xs uppercase tracking-wider text-[#E23B3B] font-bold mb-4 flex items-center gap-2">
+            <h4 class="text-xs uppercase tracking-wider text-[#b91a19] font-bold mb-4 flex items-center gap-2">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 <span>Identitas Sepeda Motor</span>
             </h4>
@@ -126,14 +126,14 @@
 
         <!-- Customer Card -->
         <div class="bg-[#191A1F] border border-[#303137] rounded-2xl p-6 shadow-xl">
-            <h4 class="text-xs uppercase tracking-wider text-[#E23B3B] font-bold mb-4 flex items-center gap-2">
+            <h4 class="text-xs uppercase tracking-wider text-[#b91a19] font-bold mb-4 flex items-center gap-2">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
                 <span>Profil Pemilik (Pelanggan)</span>
             </h4>
             <div class="space-y-3 text-sm">
                 <div class="flex justify-between py-2 border-b border-[#303137]/60">
                     <span class="text-[#92939A]">ID Pelanggan:</span>
-                    <span class="font-mono text-xs font-bold text-[#E23B3B]">{{ $service->customer->customer_id ?? '-' }}</span>
+                    <span class="font-mono text-xs font-bold text-[#b91a19]">{{ $service->customer->customer_id ?? '-' }}</span>
                 </div>
                 <div class="flex justify-between py-2 border-b border-[#303137]/60">
                     <span class="text-[#92939A]">Nama Lengkap:</span>
@@ -171,7 +171,7 @@
             <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#303137]">
                 <div>
                     <h4 class="text-lg font-display font-bold text-[#F4F2EF]">Rincian Teknis Pengerjaan Servis</h4>
-                    <p class="text-xs text-[#92939A]">Kode Detail: <span class="font-mono text-[#E23B3B]">{{ $service->serviceDetail->detail_id }}</span></p>
+                    <p class="text-xs text-[#92939A]">Kode Detail: <span class="font-mono text-[#b91a19]">{{ $service->serviceDetail->detail_id }}</span></p>
                 </div>
                 <div class="flex items-center gap-3">
                     <a href="{{ route('admin.service-details.show', $service->serviceDetail->id) }}" class="text-xs text-[#92939A] hover:text-[#F4F2EF] underline">Buka Lembar Pengerjaan</a>
@@ -242,8 +242,8 @@
                                 </td>
                             </tr>
                             <tr class="bg-[#222329]/60">
-                                <td colspan="4" class="px-4 py-3 text-right uppercase tracking-wider text-xs font-bold text-[#E23B3B]">Total Estimasi Biaya Servis:</td>
-                                <td class="px-4 py-3 text-right font-mono font-bold text-base text-[#E23B3B]">
+                                <td colspan="4" class="px-4 py-3 text-right uppercase tracking-wider text-xs font-bold text-[#b91a19]">Total Estimasi Biaya Servis:</td>
+                                <td class="px-4 py-3 text-right font-mono font-bold text-base text-[#b91a19]">
                                     Rp {{ number_format($service->serviceDetail->service_cost + $service->serviceDetail->serviceSpareparts->sum('subtotal'), 0, ',', '.') }}
                                 </td>
                             </tr>
@@ -262,7 +262,7 @@
             <p class="text-xs text-[#92939A] mt-1 max-w-md mx-auto">
                 Unit motor ini belum dialokasikan ke teknisi atau belum memiliki rincian pemakaian suku cadang dan jasa servis.
             </p>
-            <a href="{{ route('admin.service-details.create', ['service_id' => $service->id]) }}" class="inline-flex items-center gap-2 mt-4 bg-[#C62828] hover:bg-[#E23B3B] text-white text-xs font-semibold py-2.5 px-5 rounded-xl transition-colors">
+            <a href="{{ route('admin.service-details.create', ['service_id' => $service->id]) }}" class="inline-flex items-center gap-2 mt-4 bg-[#9a1312] hover:bg-[#b91a19] text-white text-xs font-semibold py-2.5 px-5 rounded-xl transition-colors">
                 <span>Alokasikan Teknisi & Biaya Servis</span>
             </a>
         </div>

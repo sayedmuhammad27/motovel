@@ -13,9 +13,9 @@
             <!-- Pilihan Servis Motor -->
             <div>
                 <label for="service_registration_id" class="block text-xs uppercase tracking-wider text-[#92939A] font-semibold mb-2">
-                    Pilih Pendaftaran Servis Motor <span class="text-[#E23B3B]">*</span>
+                    Pilih Pendaftaran Servis Motor <span class="text-[#b91a19]">*</span>
                 </label>
-                <select name="service_registration_id" id="service_registration_id" required class="w-full bg-[#111216] border @error('service_registration_id') border-[#E23B3B] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]">
+                <select name="service_registration_id" id="service_registration_id" required class="w-full bg-[#111216] border @error('service_registration_id') border-[#b91a19] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]">
                     <option value="">-- Pilih Antrean Servis Motor --</option>
                     @foreach($services as $s)
                         <option value="{{ $s->id }}" {{ (old('service_registration_id') == $s->id || $selectedServiceId == $s->id) ? 'selected' : '' }}>
@@ -24,7 +24,7 @@
                     @endforeach
                 </select>
                 @error('service_registration_id')
-                    <p class="mt-1.5 text-xs text-[#E23B3B]">{{ $message }}</p>
+                    <p class="mt-1.5 text-xs text-[#b91a19]">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -33,9 +33,9 @@
                 <!-- Mekanik -->
                 <div>
                     <label for="mechanic_id" class="block text-xs uppercase tracking-wider text-[#92939A] font-semibold mb-2">
-                        Mekanik Penanggung Jawab <span class="text-[#E23B3B]">*</span>
+                        Mekanik Penanggung Jawab <span class="text-[#b91a19]">*</span>
                     </label>
-                    <select name="mechanic_id" id="mechanic_id" required class="w-full bg-[#111216] border @error('mechanic_id') border-[#E23B3B] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]">
+                    <select name="mechanic_id" id="mechanic_id" required class="w-full bg-[#111216] border @error('mechanic_id') border-[#b91a19] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]">
                         <option value="">-- Pilih Mekanik Bertugas --</option>
                         @foreach($mechanics as $m)
                             <option value="{{ $m->id }}" {{ old('mechanic_id') == $m->id ? 'selected' : '' }}>
@@ -44,23 +44,23 @@
                         @endforeach
                     </select>
                     @error('mechanic_id')
-                        <p class="mt-1.5 text-xs text-[#E23B3B]">{{ $message }}</p>
+                        <p class="mt-1.5 text-xs text-[#b91a19]">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <!-- Status Pengerjaan -->
                 <div>
                     <label for="service_status" class="block text-xs uppercase tracking-wider text-[#92939A] font-semibold mb-2">
-                        Status Pengerjaan <span class="text-[#E23B3B]">*</span>
+                        Status Pengerjaan <span class="text-[#b91a19]">*</span>
                     </label>
-                    <select name="service_status" id="service_status" required class="w-full bg-[#111216] border @error('service_status') border-[#E23B3B] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#C62828]">
+                    <select name="service_status" id="service_status" required class="w-full bg-[#111216] border @error('service_status') border-[#b91a19] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]">
                         <option value="in_progress" {{ old('service_status') == 'in_progress' ? 'selected' : '' }}>Sedang Dikerjakan (In Progress)</option>
                         <option value="completed" {{ old('service_status') == 'completed' ? 'selected' : '' }}>Pengerjaan Selesai (Completed)</option>
                         <option value="waiting" {{ old('service_status') == 'waiting' ? 'selected' : '' }}>Menunggu Part / Antre (Waiting)</option>
                         <option value="cancelled" {{ old('service_status') == 'cancelled' ? 'selected' : '' }}>Dibatalkan (Cancelled)</option>
                     </select>
                     @error('service_status')
-                        <p class="mt-1.5 text-xs text-[#E23B3B]">{{ $message }}</p>
+                        <p class="mt-1.5 text-xs text-[#b91a19]">{{ $message }}</p>
                     @enderror
                 </div>
             </div>
@@ -74,16 +74,16 @@
                           id="estimation" 
                           rows="3" 
                           placeholder="Hasil diagnosa kerusakan motor, komponen yang perlu disetel atau diganti, saran perawatan berikutnya..."
-                          class="w-full bg-[#111216] border @error('estimation') border-[#E23B3B] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] placeholder-[#92939A]/40 focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]">{{ old('estimation') }}</textarea>
+                          class="w-full bg-[#111216] border @error('estimation') border-[#b91a19] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] placeholder-[#92939A]/40 focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]">{{ old('estimation') }}</textarea>
                 @error('estimation')
-                    <p class="mt-1.5 text-xs text-[#E23B3B]">{{ $message }}</p>
+                    <p class="mt-1.5 text-xs text-[#b91a19]">{{ $message }}</p>
                 @enderror
             </div>
 
             <!-- Biaya Jasa Servis -->
             <div>
                 <label for="service_cost" class="block text-xs uppercase tracking-wider text-[#92939A] font-semibold mb-2">
-                    Biaya Jasa Servis (Rp) <span class="text-[#E23B3B]">*</span>
+                    Biaya Jasa Servis (Rp) <span class="text-[#b91a19]">*</span>
                 </label>
                 <div class="relative">
                     <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xs font-mono text-[#92939A]">Rp</span>
@@ -95,10 +95,10 @@
                            step="1000"
                            required
                            placeholder="75000"
-                           class="w-full bg-[#111216] border @error('service_cost') border-[#E23B3B] @else border-[#303137] @enderror rounded-xl pl-12 pr-4 py-3 text-sm font-mono text-[#F4F2EF] focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]">
+                           class="w-full bg-[#111216] border @error('service_cost') border-[#b91a19] @else border-[#303137] @enderror rounded-xl pl-12 pr-4 py-3 text-sm font-mono text-[#F4F2EF] focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]">
                 </div>
                 @error('service_cost')
-                    <p class="mt-1.5 text-xs text-[#E23B3B]">{{ $message }}</p>
+                    <p class="mt-1.5 text-xs text-[#b91a19]">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -112,7 +112,7 @@
                     <button type="button" 
                             @click="addPart()" 
                             class="inline-flex items-center gap-1.5 bg-[#222329] hover:bg-[#303137] text-white text-xs font-semibold py-2 px-3.5 rounded-xl border border-[#303137] transition-colors">
-                        <svg class="w-4 h-4 text-[#E23B3B]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                        <svg class="w-4 h-4 text-[#b91a19]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                         <span>Tambah Suku Cadang</span>
                     </button>
                 </div>
@@ -127,7 +127,7 @@
                                         x-model="item.id" 
                                         @change="updatePartInfo(index)"
                                         required 
-                                        class="w-full bg-[#191A1F] border border-[#303137] rounded-lg px-3 py-2 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#C62828]">
+                                        class="w-full bg-[#191A1F] border border-[#303137] rounded-lg px-3 py-2 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]">
                                     <option value="">-- Pilih Suku Cadang --</option>
                                     @foreach($spareparts as $sp)
                                         <option value="{{ $sp->id }}" data-price="{{ $sp->price }}" data-stock="{{ $sp->stock }}">
@@ -146,7 +146,7 @@
                                        min="1" 
                                        :max="item.stock || 999"
                                        required
-                                       class="w-full bg-[#191A1F] border border-[#303137] rounded-lg px-3 py-2 text-xs text-center font-mono text-[#F4F2EF] focus:outline-none focus:border-[#C62828]">
+                                       class="w-full bg-[#191A1F] border border-[#303137] rounded-lg px-3 py-2 text-xs text-center font-mono text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]">
                             </div>
 
                             <!-- Subtotal (Col 3) -->
@@ -161,7 +161,7 @@
                             <div class="col-span-2 sm:col-span-1 text-right sm:pt-4">
                                 <button type="button" 
                                         @click="removePart(index)" 
-                                        class="p-2 text-zinc-500 hover:text-[#E23B3B] transition-colors" 
+                                        class="p-2 text-zinc-500 hover:text-[#b91a19] transition-colors" 
                                         title="Hapus Baris">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
                                 </button>
@@ -184,7 +184,7 @@
                         <span>Total Suku Cadang:</span>
                         <span class="font-mono font-semibold text-[#F4F2EF]">Rp <span x-text="formatRupiah(totalSparepartsCost())">0</span></span>
                     </div>
-                    <div class="flex justify-between pt-2 border-t border-[#303137] text-sm font-bold text-[#E23B3B]">
+                    <div class="flex justify-between pt-2 border-t border-[#303137] text-sm font-bold text-[#b91a19]">
                         <span>Grand Total (Jasa + Part):</span>
                         <span class="font-mono text-base">Rp <span x-text="formatRupiah(grandTotal())">0</span></span>
                     </div>
@@ -196,7 +196,7 @@
                 <a href="{{ route('admin.service-details.index') }}" class="px-5 py-2.5 rounded-xl border border-[#303137] text-xs font-semibold text-[#92939A] hover:text-[#F4F2EF] hover:bg-[#222329] transition-colors">
                     Batal
                 </a>
-                <button type="submit" class="bg-[#C62828] hover:bg-[#E23B3B] text-white text-xs uppercase tracking-wider font-semibold py-2.5 px-6 rounded-xl shadow-md transition-colors">
+                <button type="submit" class="bg-[#9a1312] hover:bg-[#b91a19] text-white text-xs uppercase tracking-wider font-semibold py-2.5 px-6 rounded-xl shadow-md transition-colors">
                     Simpan Rincian Teknis
                 </button>
             </div>

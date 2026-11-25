@@ -25,12 +25,12 @@
         <!-- Official Booking Card (Printable) -->
         <div id="booking-receipt" class="bg-[#111216] border border-[#303137] rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden space-y-6">
             <!-- Red Decorative Accent Stripe -->
-            <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#C62828] via-[#E23B3B] to-[#C62828]"></div>
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#9a1312] via-[#b91a19] to-[#9a1312]"></div>
 
             <div class="flex items-center justify-between border-b border-[#303137] pb-5">
                 <div>
                     <span class="text-[10px] uppercase tracking-[0.2em] text-[#92939A] block">Kode Pendaftaran Servis</span>
-                    <span class="font-mono text-2xl sm:text-3xl font-bold text-[#E23B3B] tracking-wider">{{ $service->service_id }}</span>
+                    <span class="font-mono text-2xl sm:text-3xl font-bold text-[#b91a19] tracking-wider">{{ $service->service_id }}</span>
                 </div>
                 <div class="text-right">
                     <x-status-badge :status="$service->status" type="service" />
@@ -60,7 +60,7 @@
                 <div>
                     <span class="text-[#92939A] block">Rencana Tanggal Servis:</span>
                     <strong class="text-[#F4F2EF] text-sm">{{ $service->service_date ? $service->service_date->format('d F Y') : '-' }}</strong>
-                    <span class="text-[11px] text-[#E23B3B] block">Pukul 08:30 - 16:30 WIB</span>
+                    <span class="text-[11px] text-[#b91a19] block">Pukul 08:30 - 16:30 WIB</span>
                 </div>
             </div>
 
@@ -90,7 +90,7 @@
                 <span>Cetak / Simpan Bukti</span>
             </button>
 
-            <a href="{{ url('/') }}" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#C62828] hover:bg-[#E23B3B] text-white text-xs uppercase tracking-wider font-semibold py-3 px-8 rounded-xl transition-colors shadow-lg">
+            <a href="{{ url('/') }}" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#9a1312] hover:bg-[#b91a19] text-white text-xs uppercase tracking-wider font-semibold py-3 px-8 rounded-xl transition-colors shadow-lg">
                 <span>Kembali ke Beranda</span>
             </a>
         </div>

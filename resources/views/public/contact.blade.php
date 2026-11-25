@@ -9,7 +9,7 @@
 
         <!-- Header -->
         <div class="max-w-3xl space-y-4">
-            <span class="text-xs uppercase tracking-[0.25em] text-[#C62828] font-bold">Layanan Pelanggan</span>
+            <span class="text-xs uppercase tracking-[0.25em] text-[#9a1312] font-bold">Layanan Pelanggan</span>
             <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-[#F4F2EF] leading-tight">
                 Hubungi Kami & Kunjungi Workshop
             </h1>
@@ -25,7 +25,7 @@
                 
                 <div class="bg-[#111216] border border-[#303137] rounded-2xl p-6 sm:p-8 space-y-6">
                     <div>
-                        <span class="text-xs uppercase tracking-wider text-[#C62828] font-bold">Alamat Utama Bengkel</span>
+                        <span class="text-xs uppercase tracking-wider text-[#9a1312] font-bold">Alamat Utama Bengkel</span>
                         <h3 class="font-display text-xl font-bold text-[#F4F2EF] mt-1">MOTOVEL Workshop Surabaya</h3>
                         <p class="text-xs text-[#92939A] mt-2 leading-relaxed">
                             Jl. Mayjen Sungkono No. 108, Sawahan, Surabaya, Jawa Timur 60256 (Tepat di seberang Gedung Graha Pena, deretan ruko otomotif).
@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="border-t border-[#303137] pt-6">
-                        <span class="text-xs uppercase tracking-wider text-[#C62828] font-bold block mb-2">Jam Buka Bengkel</span>
+                        <span class="text-xs uppercase tracking-wider text-[#9a1312] font-bold block mb-2">Jam Buka Bengkel</span>
                         <div class="text-xs space-y-1.5 text-[#92939A]">
                             <div class="flex justify-between">
                                 <span>Senin - Jumat</span>
@@ -60,7 +60,7 @@
                             </div>
                             <div class="flex justify-between">
                                 <span>Minggu / Hari Libur</span>
-                                <span class="text-[#E23B3B] font-medium">Khusus Appointment</span>
+                                <span class="text-[#b91a19] font-medium">Khusus Appointment</span>
                             </div>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                 <div class="bg-[#191A1F] border border-[#303137] rounded-2xl p-6 text-center space-y-3">
                     <p class="text-xs font-semibold text-[#F4F2EF]">Ingin langsung memesan jadwal servis?</p>
                     <p class="text-xs text-[#92939A]">Gunakan formulir pendaftaran mandiri kami untuk mendapatkan nomor antrean instan.</p>
-                    <a href="{{ url('/booking') }}" class="inline-block w-full bg-[#C62828] hover:bg-[#E23B3B] text-white text-xs uppercase tracking-wider font-semibold py-3 rounded-xl transition-colors">
+                    <a href="{{ url('/booking') }}" class="inline-block w-full bg-[#9a1312] hover:bg-[#b91a19] text-white text-xs uppercase tracking-wider font-semibold py-3 rounded-xl transition-colors">
                         Buka Formulir Pendaftaran Servis
                     </a>
                 </div>
@@ -92,17 +92,17 @@
                             <div>
                                 <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-[#92939A] mb-2">Nama Lengkap *</label>
                                 <input type="text" name="name" id="name" value="{{ old('name') }}" required 
-                                       class="w-full bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] placeholder-[#92939A]/40 focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]"
+                                       class="w-full bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] placeholder-[#92939A]/40 focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]"
                                        placeholder="Contoh: Dimas Arya">
-                                @error('name') <p class="text-xs text-[#E23B3B] mt-1">{{ $message }}</p> @enderror
+                                @error('name') <p class="text-xs text-[#b91a19] mt-1">{{ $message }}</p> @enderror
                             </div>
 
                             <div>
                                 <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-[#92939A] mb-2">Alamat Email *</label>
                                 <input type="email" name="email" id="email" value="{{ old('email') }}" required 
-                                       class="w-full bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] placeholder-[#92939A]/40 focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]"
+                                       class="w-full bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] placeholder-[#92939A]/40 focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]"
                                        placeholder="nama@email.com">
-                                @error('email') <p class="text-xs text-[#E23B3B] mt-1">{{ $message }}</p> @enderror
+                                @error('email') <p class="text-xs text-[#b91a19] mt-1">{{ $message }}</p> @enderror
                             </div>
                         </div>
 
@@ -110,15 +110,15 @@
                             <div>
                                 <label for="phone" class="block text-xs font-semibold uppercase tracking-wider text-[#92939A] mb-2">Nomor Telepon / WhatsApp</label>
                                 <input type="text" name="phone" id="phone" value="{{ old('phone') }}" 
-                                       class="w-full bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] placeholder-[#92939A]/40 focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]"
+                                       class="w-full bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] placeholder-[#92939A]/40 focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]"
                                        placeholder="0812xxxxxxxx">
-                                @error('phone') <p class="text-xs text-[#E23B3B] mt-1">{{ $message }}</p> @enderror
+                                @error('phone') <p class="text-xs text-[#b91a19] mt-1">{{ $message }}</p> @enderror
                             </div>
 
                             <div>
                                 <label for="subject" class="block text-xs font-semibold uppercase tracking-wider text-[#92939A] mb-2">Subjek Keperluan *</label>
                                 <select name="subject" id="subject" required 
-                                        class="w-full bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]">
+                                        class="w-full bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]">
                                     <option value="" disabled {{ old('subject') ? '' : 'selected' }}>Pilih topik pertanyaan...</option>
                                     <option value="Konsultasi Servis Mesin" {{ old('subject') === 'Konsultasi Servis Mesin' ? 'selected' : '' }}>Konsultasi Servis Mesin</option>
                                     <option value="Ketersediaan Sparepart" {{ old('subject') === 'Ketersediaan Sparepart' ? 'selected' : '' }}>Ketersediaan Sparepart</option>
@@ -126,20 +126,20 @@
                                     <option value="Kelistrikan & ECU" {{ old('subject') === 'Kelistrikan & ECU' ? 'selected' : '' }}>Kelistrikan & ECU</option>
                                     <option value="Kerjasama & Lainnya" {{ old('subject') === 'Kerjasama & Lainnya' ? 'selected' : '' }}>Kerjasama & Lainnya</option>
                                 </select>
-                                @error('subject') <p class="text-xs text-[#E23B3B] mt-1">{{ $message }}</p> @enderror
+                                @error('subject') <p class="text-xs text-[#b91a19] mt-1">{{ $message }}</p> @enderror
                             </div>
                         </div>
 
                         <div>
                             <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-[#92939A] mb-2">Pesan atau Keluhan Motor *</label>
                             <textarea name="message" id="message" rows="5" required 
-                                      class="w-full bg-[#191A1F] border border-[#303137] rounded-xl p-4 text-sm text-[#F4F2EF] placeholder-[#92939A]/40 focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]"
+                                      class="w-full bg-[#191A1F] border border-[#303137] rounded-xl p-4 text-sm text-[#F4F2EF] placeholder-[#92939A]/40 focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]"
                                       placeholder="Tuliskan secara singkat gejala yang dialami motor Anda, merk/tipe motor, atau suku cadang yang dicari...">{{ old('message') }}</textarea>
-                            @error('message') <p class="text-xs text-[#E23B3B] mt-1">{{ $message }}</p> @enderror
+                            @error('message') <p class="text-xs text-[#b91a19] mt-1">{{ $message }}</p> @enderror
                         </div>
 
                         <button type="submit" 
-                                class="w-full sm:w-auto bg-[#C62828] hover:bg-[#E23B3B] text-white text-xs uppercase tracking-widest font-semibold py-4 px-8 rounded-xl shadow-lg shadow-[#C62828]/25 hover:shadow-[#C62828]/40 transition-all duration-300">
+                                class="w-full sm:w-auto bg-[#9a1312] hover:bg-[#b91a19] text-white text-xs uppercase tracking-widest font-semibold py-4 px-8 rounded-xl shadow-lg shadow-[#9a1312]/25 hover:shadow-[#9a1312]/40 transition-all duration-300">
                             Kirimkan Pesan
                         </button>
                     </form>

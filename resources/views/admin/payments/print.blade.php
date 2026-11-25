@@ -6,7 +6,7 @@
     <title>Nota Pembayaran: {{ $payment->payment_id }} | MOTOVEL</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -14,7 +14,7 @@
             padding: 0;
         }
         body {
-            font-family: 'Cinzel', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: #f4f4f5;
             color: #18181b;
             padding: 24px;
@@ -45,7 +45,7 @@
             letter-spacing: 0.5px;
         }
         .brand span {
-            color: #c62828;
+            color: #9a1312;
         }
         .tagline {
             font-size: 11px;
@@ -60,7 +60,7 @@
         .meta-invoice .inv-title {
             font-size: 20px;
             font-weight: 700;
-            color: #c62828;
+            color: #9a1312;
             font-family: monospace;
         }
         .meta-invoice .inv-date {
@@ -137,10 +137,10 @@
         .grand-total td {
             font-size: 15px;
             font-weight: 700;
-            color: #c62828;
+            color: #9a1312;
             background: #fef2f2;
-            border-top: 2px solid #c62828;
-            border-bottom: 2px solid #c62828;
+            border-top: 2px solid #9a1312;
+            border-bottom: 2px solid #9a1312;
             padding-top: 14px;
             padding-bottom: 14px;
         }
@@ -196,7 +196,7 @@
             align-items: center;
         }
         .btn-print {
-            background-color: #c62828;
+            background-color: #9a1312;
             color: white;
             border: none;
             padding: 10px 20px;

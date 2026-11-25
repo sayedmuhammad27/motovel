@@ -9,7 +9,7 @@
 
         <!-- Header -->
         <div class="text-center max-w-2xl mx-auto space-y-3">
-            <span class="text-xs uppercase tracking-[0.25em] text-[#C62828] font-bold">Booking Online Mandiri</span>
+            <span class="text-xs uppercase tracking-[0.25em] text-[#9a1312] font-bold">Booking Online Mandiri</span>
             <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F4F2EF] leading-tight">
                 Pendaftaran Servis Sepeda Motor
             </h1>
@@ -23,7 +23,7 @@
             <div class="grid grid-cols-3 gap-2 text-center text-xs">
                 <div class="flex flex-col items-center gap-1.5" :class="step >= 1 ? 'text-[#F4F2EF]' : 'text-[#92939A]'">
                     <span class="w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs"
-                          :class="step >= 1 ? 'bg-[#C62828] text-white shadow-md shadow-[#C62828]/30' : 'bg-[#191A1F] border border-[#303137]'">
+                          :class="step >= 1 ? 'bg-[#9a1312] text-white shadow-md shadow-[#9a1312]/30' : 'bg-[#191A1F] border border-[#303137]'">
                         1
                     </span>
                     <span class="font-medium text-[11px] sm:text-xs">Identitas & No. HP</span>
@@ -31,7 +31,7 @@
 
                 <div class="flex flex-col items-center gap-1.5" :class="step >= 2 ? 'text-[#F4F2EF]' : 'text-[#92939A]'">
                     <span class="w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs"
-                          :class="step >= 2 ? 'bg-[#C62828] text-white shadow-md shadow-[#C62828]/30' : 'bg-[#191A1F] border border-[#303137]'">
+                          :class="step >= 2 ? 'bg-[#9a1312] text-white shadow-md shadow-[#9a1312]/30' : 'bg-[#191A1F] border border-[#303137]'">
                         2
                     </span>
                     <span class="font-medium text-[11px] sm:text-xs">Data Sepeda Motor</span>
@@ -39,7 +39,7 @@
 
                 <div class="flex flex-col items-center gap-1.5" :class="step >= 3 ? 'text-[#F4F2EF]' : 'text-[#92939A]'">
                     <span class="w-7 h-7 rounded-full flex items-center justify-center font-bold text-xs"
-                          :class="step >= 3 ? 'bg-[#C62828] text-white shadow-md shadow-[#C62828]/30' : 'bg-[#191A1F] border border-[#303137]'">
+                          :class="step >= 3 ? 'bg-[#9a1312] text-white shadow-md shadow-[#9a1312]/30' : 'bg-[#191A1F] border border-[#303137]'">
                         3
                     </span>
                     <span class="font-medium text-[11px] sm:text-xs">Keluhan & Jadwal</span>
@@ -70,12 +70,12 @@
                                        id="phone_input"
                                        x-model="phone" 
                                        required
-                                       class="flex-1 bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] font-mono placeholder-[#92939A]/40 focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]"
+                                       class="flex-1 bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] font-mono placeholder-[#92939A]/40 focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]"
                                        placeholder="Contoh: 081390123401">
                                 <button type="button" 
                                         @click="verifyPhone()" 
                                         :disabled="isSearching || phone.length < 9"
-                                        class="bg-[#C62828] hover:bg-[#E23B3B] disabled:opacity-50 text-white text-xs uppercase tracking-wider font-semibold px-6 py-3 rounded-xl transition-all flex items-center gap-2">
+                                        class="bg-[#9a1312] hover:bg-[#b91a19] disabled:opacity-50 text-white text-xs uppercase tracking-wider font-semibold px-6 py-3 rounded-xl transition-all flex items-center gap-2">
                                     <span x-show="!isSearching">Cek Nomor</span>
                                     <span x-show="isSearching" class="animate-spin inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full"></span>
                                 </button>
@@ -112,7 +112,7 @@
                             <div>
                                 <label class="block text-xs font-semibold uppercase tracking-wider text-[#92939A] mb-1.5">Nama Lengkap *</label>
                                 <input type="text" name="name" x-model="customer.name" 
-                                       class="w-full bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#C62828]"
+                                       class="w-full bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]"
                                        placeholder="Nama pemilik kendaraan">
                             </div>
 
@@ -120,13 +120,13 @@
                                 <div>
                                     <label class="block text-xs font-semibold uppercase tracking-wider text-[#92939A] mb-1.5">Profesi / Pekerjaan *</label>
                                     <input type="text" name="occupation" x-model="customer.occupation" 
-                                           class="w-full bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#C62828]"
+                                           class="w-full bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]"
                                            placeholder="Contoh: Karyawan Swasta, Wirausaha">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold uppercase tracking-wider text-[#92939A] mb-1.5">Alamat Lengkap *</label>
                                     <input type="text" name="address" x-model="customer.address" 
-                                           class="w-full bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#C62828]"
+                                           class="w-full bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]"
                                            placeholder="Alamat domisili kota">
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
                         <button type="button" 
                                 @click="goToStep2()" 
                                 :disabled="!canProceedToStep2()"
-                                class="bg-[#C62828] hover:bg-[#E23B3B] disabled:opacity-40 text-white text-xs uppercase tracking-wider font-semibold py-3 px-8 rounded-xl transition-all flex items-center gap-2">
+                                class="bg-[#9a1312] hover:bg-[#b91a19] disabled:opacity-40 text-white text-xs uppercase tracking-wider font-semibold py-3 px-8 rounded-xl transition-all flex items-center gap-2">
                             <span>Lanjut: Data Motor</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -164,7 +164,7 @@
                                 <label class="text-xs uppercase tracking-wider font-semibold text-[#92939A]">Pilihan Sepeda Motor:</label>
                                 <button type="button" 
                                         @click="vehicleMode = (vehicleMode === 'existing' ? 'new' : 'existing')" 
-                                        class="text-xs text-[#E23B3B] hover:underline font-medium">
+                                        class="text-xs text-[#b91a19] hover:underline font-medium">
                                     <span x-text="vehicleMode === 'existing' ? '+ Daftarkan Motor Baru' : '← Pilih Motor yang Sudah Ada'"></span>
                                 </button>
                             </div>
@@ -172,9 +172,9 @@
                             <div x-show="vehicleMode === 'existing'" class="space-y-2">
                                 <template x-for="v in vehicles" :key="v.id">
                                     <label class="flex items-center justify-between p-4 rounded-xl border cursor-pointer transition-all"
-                                           :class="selectedVehicleId == v.id ? 'bg-[#C62828]/10 border-[#C62828] text-white' : 'bg-[#191A1F] border-[#303137] text-[#92939A] hover:border-[#92939A]'">
+                                           :class="selectedVehicleId == v.id ? 'bg-[#9a1312]/10 border-[#9a1312] text-white' : 'bg-[#191A1F] border-[#303137] text-[#92939A] hover:border-[#92939A]'">
                                         <div class="flex items-center gap-3">
-                                            <input type="radio" name="vehicle_id" :value="v.id" x-model="selectedVehicleId" class="text-[#C62828] focus:ring-[#C62828]">
+                                            <input type="radio" name="vehicle_id" :value="v.id" x-model="selectedVehicleId" class="text-[#9a1312] focus:ring-[#9a1312]">
                                             <div>
                                                 <p class="text-sm font-bold font-mono text-[#F4F2EF]" x-text="v.plate_number"></p>
                                                 <p class="text-xs text-[#92939A]" x-text="'Tipe: ' + v.type.toUpperCase() + ' | Tahun ' + v.year + ' | Warna: ' + v.color"></p>
@@ -195,7 +195,7 @@
                             <div>
                                 <label class="block text-xs font-semibold uppercase tracking-wider text-[#92939A] mb-1.5">Nomor Plat Motor *</label>
                                 <input type="text" name="plate_number" x-model="newVehicle.plate_number" 
-                                       class="w-full bg-[#111216] border border-[#303137] rounded-xl px-4 py-3 text-sm font-mono text-[#F4F2EF] uppercase focus:outline-none focus:border-[#C62828]"
+                                       class="w-full bg-[#111216] border border-[#303137] rounded-xl px-4 py-3 text-sm font-mono text-[#F4F2EF] uppercase focus:outline-none focus:border-[#9a1312]"
                                        placeholder="Contoh: L 1234 XY">
                             </div>
 
@@ -203,13 +203,13 @@
                                 <label class="block text-xs font-semibold uppercase tracking-wider text-[#92939A] mb-1.5">Jenis Transmisi Motor *</label>
                                 <div class="grid grid-cols-2 gap-3 pt-1">
                                     <label class="flex items-center gap-2 p-3 rounded-lg border border-[#303137] bg-[#111216] cursor-pointer text-xs"
-                                           :class="newVehicle.type === 'matic' ? 'border-[#C62828] text-white' : 'text-[#92939A]'">
-                                        <input type="radio" name="type" value="matic" x-model="newVehicle.type" class="text-[#C62828]">
+                                           :class="newVehicle.type === 'matic' ? 'border-[#9a1312] text-white' : 'text-[#92939A]'">
+                                        <input type="radio" name="type" value="matic" x-model="newVehicle.type" class="text-[#9a1312]">
                                         <span>Matic / CVT</span>
                                     </label>
                                     <label class="flex items-center gap-2 p-3 rounded-lg border border-[#303137] bg-[#111216] cursor-pointer text-xs"
-                                           :class="newVehicle.type === 'manual' ? 'border-[#C62828] text-white' : 'text-[#92939A]'">
-                                        <input type="radio" name="type" value="manual" x-model="newVehicle.type" class="text-[#C62828]">
+                                           :class="newVehicle.type === 'manual' ? 'border-[#9a1312] text-white' : 'text-[#92939A]'">
+                                        <input type="radio" name="type" value="manual" x-model="newVehicle.type" class="text-[#9a1312]">
                                         <span>Manual / Sport</span>
                                     </label>
                                 </div>
@@ -220,19 +220,19 @@
                             <div>
                                 <label class="block text-xs font-semibold uppercase tracking-wider text-[#92939A] mb-1.5">Nomor STNK *</label>
                                 <input type="text" name="stnk_number" x-model="newVehicle.stnk_number" 
-                                       class="w-full bg-[#111216] border border-[#303137] rounded-xl px-4 py-2.5 text-xs text-[#F4F2EF] font-mono focus:outline-none focus:border-[#C62828]"
+                                       class="w-full bg-[#111216] border border-[#303137] rounded-xl px-4 py-2.5 text-xs text-[#F4F2EF] font-mono focus:outline-none focus:border-[#9a1312]"
                                        placeholder="STNK-xxxxxxx">
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold uppercase tracking-wider text-[#92939A] mb-1.5">Tahun Pembuatan *</label>
                                 <input type="number" name="year" x-model="newVehicle.year" min="1990" max="{{ date('Y') + 1 }}" 
-                                       class="w-full bg-[#111216] border border-[#303137] rounded-xl px-4 py-2.5 text-xs text-[#F4F2EF] font-mono focus:outline-none focus:border-[#C62828]"
+                                       class="w-full bg-[#111216] border border-[#303137] rounded-xl px-4 py-2.5 text-xs text-[#F4F2EF] font-mono focus:outline-none focus:border-[#9a1312]"
                                        placeholder="Contoh: 2023">
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold uppercase tracking-wider text-[#92939A] mb-1.5">Warna Bodi Motor *</label>
                                 <input type="text" name="color" x-model="newVehicle.color" 
-                                       class="w-full bg-[#111216] border border-[#303137] rounded-xl px-4 py-2.5 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#C62828]"
+                                       class="w-full bg-[#111216] border border-[#303137] rounded-xl px-4 py-2.5 text-xs text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]"
                                        placeholder="Contoh: Matte Black">
                             </div>
                         </div>
@@ -247,7 +247,7 @@
                         <button type="button" 
                                 @click="goToStep3()" 
                                 :disabled="!canProceedToStep3()"
-                                class="bg-[#C62828] hover:bg-[#E23B3B] disabled:opacity-40 text-white text-xs uppercase tracking-wider font-semibold py-3 px-8 rounded-xl transition-all flex items-center gap-2">
+                                class="bg-[#9a1312] hover:bg-[#b91a19] disabled:opacity-40 text-white text-xs uppercase tracking-wider font-semibold py-3 px-8 rounded-xl transition-all flex items-center gap-2">
                             <span>Lanjut: Keluhan & Tanggal</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -273,7 +273,7 @@
                                       x-model="complaint" 
                                       rows="4" 
                                       required
-                                      class="w-full bg-[#191A1F] border border-[#303137] rounded-xl p-4 text-sm text-[#F4F2EF] placeholder-[#92939A]/40 focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]"
+                                      class="w-full bg-[#191A1F] border border-[#303137] rounded-xl p-4 text-sm text-[#F4F2EF] placeholder-[#92939A]/40 focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]"
                                       placeholder="Tuliskan secara rinci, contoh: Servis rutin 10.000 KM, tarikan awal CVT gredek saat tanjakan, dan minta ganti oli Motul 7100."></textarea>
                             <p class="text-[11px] text-[#92939A] mt-1">Informasi ini akan langsung dibaca oleh kepala mekanik kami saat persiapan pit servis.</p>
                         </div>
@@ -288,7 +288,7 @@
                                    x-model="serviceDate" 
                                    min="{{ date('Y-m-d') }}"
                                    required
-                                   class="w-full sm:w-64 bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]">
+                                   class="w-full sm:w-64 bg-[#191A1F] border border-[#303137] rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]">
                             <p class="text-[11px] text-[#92939A] mt-1">Pilih tanggal hari ini atau beberapa hari ke depan (Senin s.d. Sabtu).</p>
                         </div>
 
@@ -312,7 +312,7 @@
 
                         <button type="submit" 
                                 :disabled="complaint.length < 5 || !serviceDate"
-                                class="bg-[#C62828] hover:bg-[#E23B3B] disabled:opacity-40 text-white text-xs uppercase tracking-widest font-semibold py-4 px-10 rounded-xl shadow-xl shadow-[#C62828]/30 transition-all flex items-center gap-2">
+                                class="bg-[#9a1312] hover:bg-[#b91a19] disabled:opacity-40 text-white text-xs uppercase tracking-widest font-semibold py-4 px-10 rounded-xl shadow-xl shadow-[#9a1312]/30 transition-all flex items-center gap-2">
                             <span>Konfirmasi & Simpan Booking</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />

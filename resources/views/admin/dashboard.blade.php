@@ -152,7 +152,7 @@
                 <h3 class="text-base font-bold font-display text-[#F4F2EF] tracking-wide">Pendaftaran Servis Terbaru</h3>
                 <p class="text-xs text-[#92939A] mt-0.5">Daftar reservasi dan pengerjaan servis terkini yang masuk ke sistem bengkel</p>
             </div>
-            <a href="{{ url('/admin/services') }}" class="inline-flex items-center gap-2 text-xs text-[#C62828] hover:text-[#E23B3B] font-semibold transition-colors">
+            <a href="{{ url('/admin/services') }}" class="inline-flex items-center gap-2 text-xs text-[#9a1312] hover:text-[#b91a19] font-semibold transition-colors">
                 <span>Lihat Seluruh Servis</span>
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -208,7 +208,7 @@
                                 @endif
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-xs">
-                                <a href="{{ url('/admin/services/' . $srv->id) }}" class="text-[#C62828] hover:text-[#E23B3B] font-semibold transition-colors">
+                                <a href="{{ url('/admin/services/' . $srv->id) }}" class="text-[#9a1312] hover:text-[#b91a19] font-semibold transition-colors">
                                     Detail
                                 </a>
                             </td>

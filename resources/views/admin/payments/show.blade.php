@@ -20,7 +20,7 @@
                 <span>Cetak Nota Struk</span>
             </a>
 
-            <a href="{{ route('admin.payments.edit', $payment->id) }}" class="inline-flex items-center gap-2 bg-[#C62828] hover:bg-[#E23B3B] text-white text-xs font-semibold py-2 px-4 rounded-xl transition-colors">
+            <a href="{{ route('admin.payments.edit', $payment->id) }}" class="inline-flex items-center gap-2 bg-[#9a1312] hover:bg-[#b91a19] text-white text-xs font-semibold py-2 px-4 rounded-xl transition-colors">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                 <span>Edit Pembayaran</span>
             </a>
@@ -34,13 +34,13 @@
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-8 border-b border-[#303137] gap-4">
             <div>
                 <div class="flex items-center gap-3">
-                    <span class="font-display text-2xl font-bold tracking-tight text-[#F4F2EF]">MOTO<span class="text-[#E23B3B]">VEL</span></span>
+                    <span class="font-display text-2xl font-bold tracking-tight text-[#F4F2EF]">MOTO<span class="text-[#b91a19]">VEL</span></span>
                     <span class="text-xs uppercase tracking-widest text-[#92939A] px-2.5 py-0.5 rounded bg-[#111216] border border-[#303137]">Official Invoice</span>
                 </div>
                 <p class="text-xs text-[#92939A] mt-1">Precision Care. Performance You Can Trust.</p>
             </div>
             <div class="text-left sm:text-right">
-                <div class="font-mono text-xl font-bold text-[#E23B3B]">{{ $payment->payment_id }}</div>
+                <div class="font-mono text-xl font-bold text-[#b91a19]">{{ $payment->payment_id }}</div>
                 <div class="text-xs text-[#92939A] mt-0.5">Tanggal Terbit: {{ $payment->created_at->translatedFormat('d F Y') }}</div>
             </div>
         </div>
@@ -134,8 +134,8 @@
                         <td class="px-6 py-2.5 text-right font-mono font-bold text-[#F4F2EF] text-xs">Rp {{ number_format($payment->sparepart_cost, 0, ',', '.') }}</td>
                     </tr>
                     <tr class="bg-[#222329]/80 border-t border-[#303137]">
-                        <td colspan="3" class="px-6 py-4 text-right uppercase tracking-wider text-sm font-bold text-[#E23B3B]">Total Pembayaran Akhir:</td>
-                        <td class="px-6 py-4 text-right font-mono font-bold text-xl text-[#E23B3B]">
+                        <td colspan="3" class="px-6 py-4 text-right uppercase tracking-wider text-sm font-bold text-[#b91a19]">Total Pembayaran Akhir:</td>
+                        <td class="px-6 py-4 text-right font-mono font-bold text-xl text-[#b91a19]">
                             Rp {{ number_format($payment->total_amount, 0, ',', '.') }}
                         </td>
                     </tr>

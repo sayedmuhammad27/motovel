@@ -13,13 +13,13 @@
             <!-- Pilihan Servis -->
             <div>
                 <label for="service_registration_id" class="block text-xs uppercase tracking-wider text-[#92939A] font-semibold mb-2">
-                    Pilih Pendaftaran Servis <span class="text-[#E23B3B]">*</span>
+                    Pilih Pendaftaran Servis <span class="text-[#b91a19]">*</span>
                 </label>
                 <select name="service_registration_id" 
                         id="service_registration_id" 
                         required 
                         @change="onServiceSelect($event)"
-                        class="w-full bg-[#111216] border @error('service_registration_id') border-[#E23B3B] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]">
+                        class="w-full bg-[#111216] border @error('service_registration_id') border-[#b91a19] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]">
                     <option value="">-- Pilih Servis Motor --</option>
                     @foreach($services as $s)
                         @php
@@ -35,7 +35,7 @@
                     @endforeach
                 </select>
                 @error('service_registration_id')
-                    <p class="mt-1.5 text-xs text-[#E23B3B]">{{ $message }}</p>
+                    <p class="mt-1.5 text-xs text-[#b91a19]">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -44,7 +44,7 @@
                 <!-- Biaya Jasa Servis -->
                 <div>
                     <label for="service_cost" class="block text-xs uppercase tracking-wider text-[#92939A] font-semibold mb-2">
-                        Biaya Jasa Servis (Rp) <span class="text-[#E23B3B]">*</span>
+                        Biaya Jasa Servis (Rp) <span class="text-[#b91a19]">*</span>
                     </label>
                     <div class="relative">
                         <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xs font-mono text-[#92939A]">Rp</span>
@@ -55,17 +55,17 @@
                                min="0" 
                                step="1000"
                                required
-                               class="w-full bg-[#111216] border @error('service_cost') border-[#E23B3B] @else border-[#303137] @enderror rounded-xl pl-12 pr-4 py-3 text-sm font-mono text-[#F4F2EF] focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]">
+                               class="w-full bg-[#111216] border @error('service_cost') border-[#b91a19] @else border-[#303137] @enderror rounded-xl pl-12 pr-4 py-3 text-sm font-mono text-[#F4F2EF] focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]">
                     </div>
                     @error('service_cost')
-                        <p class="mt-1.5 text-xs text-[#E23B3B]">{{ $message }}</p>
+                        <p class="mt-1.5 text-xs text-[#b91a19]">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <!-- Biaya Suku Cadang -->
                 <div>
                     <label for="sparepart_cost" class="block text-xs uppercase tracking-wider text-[#92939A] font-semibold mb-2">
-                        Biaya Total Suku Cadang (Rp) <span class="text-[#E23B3B]">*</span>
+                        Biaya Total Suku Cadang (Rp) <span class="text-[#b91a19]">*</span>
                     </label>
                     <div class="relative">
                         <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xs font-mono text-[#92939A]">Rp</span>
@@ -76,10 +76,10 @@
                                min="0" 
                                step="1000"
                                required
-                               class="w-full bg-[#111216] border @error('sparepart_cost') border-[#E23B3B] @else border-[#303137] @enderror rounded-xl pl-12 pr-4 py-3 text-sm font-mono text-[#F4F2EF] focus:outline-none focus:border-[#C62828] focus:ring-1 focus:ring-[#C62828]">
+                               class="w-full bg-[#111216] border @error('sparepart_cost') border-[#b91a19] @else border-[#303137] @enderror rounded-xl pl-12 pr-4 py-3 text-sm font-mono text-[#F4F2EF] focus:outline-none focus:border-[#9a1312] focus:ring-1 focus:ring-[#9a1312]">
                     </div>
                     @error('sparepart_cost')
-                        <p class="mt-1.5 text-xs text-[#E23B3B]">{{ $message }}</p>
+                        <p class="mt-1.5 text-xs text-[#b91a19]">{{ $message }}</p>
                     @enderror
                 </div>
             </div>
@@ -91,7 +91,7 @@
                     <div class="text-xs text-[#92939A] mt-0.5">Biaya Jasa Mekanik + Seluruh Suku Cadang</div>
                 </div>
                 <div class="text-right">
-                    <span class="font-mono text-2xl font-bold text-[#E23B3B]">
+                    <span class="font-mono text-2xl font-bold text-[#b91a19]">
                         Rp <span x-text="formatRupiah(totalAmount())">0</span>
                     </span>
                 </div>
@@ -102,28 +102,28 @@
                 <!-- Metode Pembayaran -->
                 <div>
                     <label for="payment_type" class="block text-xs uppercase tracking-wider text-[#92939A] font-semibold mb-2">
-                        Metode Pembayaran <span class="text-[#E23B3B]">*</span>
+                        Metode Pembayaran <span class="text-[#b91a19]">*</span>
                     </label>
-                    <select name="payment_type" id="payment_type" required class="w-full bg-[#111216] border @error('payment_type') border-[#E23B3B] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#C62828]">
+                    <select name="payment_type" id="payment_type" required class="w-full bg-[#111216] border @error('payment_type') border-[#b91a19] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]">
                         <option value="cash" {{ old('payment_type') == 'cash' ? 'selected' : '' }}>Tunai / Cash</option>
                         <option value="non-cash" {{ old('payment_type') == 'non-cash' ? 'selected' : '' }}>Non-Tunai / QRIS / Transfer Bank</option>
                     </select>
                     @error('payment_type')
-                        <p class="mt-1.5 text-xs text-[#E23B3B]">{{ $message }}</p>
+                        <p class="mt-1.5 text-xs text-[#b91a19]">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <!-- Status Pembayaran -->
                 <div>
                     <label for="status" class="block text-xs uppercase tracking-wider text-[#92939A] font-semibold mb-2">
-                        Status Pembayaran <span class="text-[#E23B3B]">*</span>
+                        Status Pembayaran <span class="text-[#b91a19]">*</span>
                     </label>
-                    <select name="status" id="status" required class="w-full bg-[#111216] border @error('status') border-[#E23B3B] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#C62828]">
+                    <select name="status" id="status" required class="w-full bg-[#111216] border @error('status') border-[#b91a19] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]">
                         <option value="paid" {{ old('status', 'paid') == 'paid' ? 'selected' : '' }}>Lunas (Paid)</option>
                         <option value="pending" {{ old('status') == 'pending' ? 'selected' : '' }}>Menunggu Pembayaran (Pending)</option>
                     </select>
                     @error('status')
-                        <p class="mt-1.5 text-xs text-[#E23B3B]">{{ $message }}</p>
+                        <p class="mt-1.5 text-xs text-[#b91a19]">{{ $message }}</p>
                     @enderror
                 </div>
             </div>
@@ -137,9 +137,9 @@
                        name="payment_date" 
                        id="payment_date" 
                        value="{{ old('payment_date', date('Y-m-d')) }}" 
-                       class="w-full bg-[#111216] border @error('payment_date') border-[#E23B3B] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#C62828]">
+                       class="w-full bg-[#111216] border @error('payment_date') border-[#b91a19] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] focus:outline-none focus:border-[#9a1312]">
                 @error('payment_date')
-                    <p class="mt-1.5 text-xs text-[#E23B3B]">{{ $message }}</p>
+                    <p class="mt-1.5 text-xs text-[#b91a19]">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -152,9 +152,9 @@
                           id="notes" 
                           rows="2" 
                           placeholder="Nomor referensi transfer bank, kasir bertugas, potongan promo jika ada..."
-                          class="w-full bg-[#111216] border @error('notes') border-[#E23B3B] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] placeholder-[#92939A]/40 focus:outline-none focus:border-[#C62828]">{{ old('notes') }}</textarea>
+                          class="w-full bg-[#111216] border @error('notes') border-[#b91a19] @else border-[#303137] @enderror rounded-xl px-4 py-3 text-sm text-[#F4F2EF] placeholder-[#92939A]/40 focus:outline-none focus:border-[#9a1312]">{{ old('notes') }}</textarea>
                 @error('notes')
-                    <p class="mt-1.5 text-xs text-[#E23B3B]">{{ $message }}</p>
+                    <p class="mt-1.5 text-xs text-[#b91a19]">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -163,7 +163,7 @@
                 <a href="{{ route('admin.payments.index') }}" class="px-5 py-2.5 rounded-xl border border-[#303137] text-xs font-semibold text-[#92939A] hover:text-[#F4F2EF] hover:bg-[#222329] transition-colors">
                     Batal
                 </a>
-                <button type="submit" class="bg-[#C62828] hover:bg-[#E23B3B] text-white text-xs uppercase tracking-wider font-semibold py-2.5 px-6 rounded-xl shadow-md transition-colors">
+                <button type="submit" class="bg-[#9a1312] hover:bg-[#b91a19] text-white text-xs uppercase tracking-wider font-semibold py-2.5 px-6 rounded-xl shadow-md transition-colors">
                     Simpan Transaksi Kasir
                 </button>
             </div>
