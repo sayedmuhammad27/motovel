@@ -12,8 +12,10 @@
     <div class="relative z-10 w-full max-w-md">
         <!-- Brand Badge -->
         <div class="text-center mb-8">
-            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#C62828] text-white font-bold text-xl shadow-xl shadow-[#C62828]/30 mb-4">
-                M
+            <div class="inline-flex items-center justify-center mb-4">
+                <img src="{{ asset('images/logo-badge.png') }}" 
+                     alt="MOTOVEL Logo" 
+                     class="w-20 h-20 object-contain rounded-2xl shadow-2xl shadow-[#C62828]/50 border-2 border-[#C62828]/50 hover:scale-105 transition-transform duration-300">
             </div>
             <h1 class="font-display text-3xl font-bold text-[#F4F2EF] tracking-wider">MOTOVEL PORTAL</h1>
             <p class="text-xs text-[#92939A] mt-1 uppercase tracking-[0.2em]">Autentikasi Staf & Administrator</p>

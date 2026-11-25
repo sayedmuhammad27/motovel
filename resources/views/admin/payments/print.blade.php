@@ -6,7 +6,7 @@
     <title>Nota Pembayaran: {{ $payment->payment_id }} | MOTOVEL</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -14,7 +14,7 @@
             padding: 0;
         }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Cinzel', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: #f4f4f5;
             color: #18181b;
             padding: 24px;
@@ -38,11 +38,11 @@
             margin-bottom: 24px;
         }
         .brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 24px;
             font-weight: 700;
             color: #09090b;
-            letter-spacing: -0.5px;
+            letter-spacing: 0.5px;
         }
         .brand span {
             color: #c62828;
@@ -238,7 +238,10 @@
         <!-- Header -->
         <div class="header">
             <div>
-                <div class="brand">MOTO<span>VEL</span></div>
+                <div class="brand" style="display: flex; align-items: center; gap: 10px;">
+                    <img src="{{ asset('images/logo-badge.png') }}" alt="MOTOVEL" style="width: 38px; height: 38px; border-radius: 8px;">
+                    <span>MOTO<span>VEL</span></span>
+                </div>
                 <div class="tagline">Precision Care. Performance You Can Trust.</div>
                 <div style="font-size: 11px; color: #71717a; margin-top: 6px;">
                     Jl. Veteran Otomotif No. 88, Workshop Center, Indonesia<br>

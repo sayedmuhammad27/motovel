@@ -7,11 +7,13 @@
 
     <title>@yield('title', 'MOTOVEL | Precision Motorcycle Care & Performance Workshop')</title>
     <meta name="description" content="@yield('meta_description', 'MOTOVEL adalah bengkel perawatan dan servis sepeda motor presisi dengan standar performa tertinggi, mekanik tersertifikasi, dan transparansi penuh.')">
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
-    <!-- Google Fonts & Styles -->
+    <!-- Google Fonts & Styles (Cinzel & Cinzel Decorative) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
 
     <!-- Alpine.js for interactive UI components -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
@@ -31,16 +33,16 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between">
                 
-                <!-- Brand Logo -->
-                <a href="{{ url('/') }}" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#C62828] rounded-md p-1">
-                    <span class="w-8 h-8 rounded-lg bg-[#C62828] flex items-center justify-center font-bold text-white text-base shadow-lg shadow-[#C62828]/30 group-hover:bg-[#E23B3B] transition-colors">
-                        M
-                    </span>
+                <!-- Brand Logo (Official MOTOVEL) -->
+                <a href="{{ url('/') }}" class="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-[#C62828] rounded-md p-1">
+                    <img src="{{ asset('images/logo-badge.png') }}" 
+                         alt="MOTOVEL Logo" 
+                         class="w-10 h-10 object-contain rounded-xl shadow-lg shadow-[#C62828]/40 border border-[#C62828]/40 group-hover:scale-105 group-hover:border-[#E23B3B] transition-all duration-300">
                     <div class="flex flex-col">
-                        <span class="font-display text-2xl font-bold tracking-wider text-[#F4F2EF] leading-none group-hover:text-white transition-colors">
+                        <span class="font-display text-2xl font-bold tracking-wider text-[#F4F2EF] leading-none group-hover:text-[#E23B3B] transition-colors">
                             MOTOVEL
                         </span>
-                        <span class="text-[9px] uppercase tracking-[0.2em] text-[#92939A] font-semibold mt-0.5">
+                        <span class="text-[9px] uppercase tracking-[0.25em] text-[#92939A] font-semibold mt-0.5">
                             Precision Care
                         </span>
                     </div>
@@ -172,8 +174,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-12 border-b border-[#303137]">
                 <!-- Col 1: About & Info -->
                 <div class="space-y-4">
-                    <div class="flex items-center gap-2.5">
-                        <span class="w-7 h-7 rounded bg-[#C62828] flex items-center justify-center font-bold text-white text-sm">M</span>
+                    <div class="flex items-center gap-3">
+                        <img src="{{ asset('images/logo-badge.png') }}" alt="MOTOVEL Logo" class="w-9 h-9 object-contain rounded-lg shadow-md border border-[#C62828]/40">
                         <span class="font-display text-xl font-bold tracking-wider text-[#F4F2EF]">MOTOVEL</span>
                     </div>
                     <p class="text-xs text-[#92939A] leading-relaxed">

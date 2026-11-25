@@ -6,11 +6,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', 'Admin Dashboard | MOTOVEL')</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (Cinzel & Cinzel Decorative) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
 
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
@@ -47,9 +49,7 @@
         <!-- Sidebar Brand Header -->
         <div class="h-20 flex items-center justify-between px-6 border-b border-[#303137]">
             <a href="{{ url('/admin/dashboard') }}" class="flex items-center gap-3">
-                <span class="w-8 h-8 rounded-lg bg-[#C62828] flex items-center justify-center font-bold text-white text-base shadow-md shadow-[#C62828]/30">
-                    M
-                </span>
+                <img src="{{ asset('images/logo-badge.png') }}" alt="MOTOVEL Logo" class="w-10 h-10 object-contain rounded-xl shadow-md border border-[#C62828]/40">
                 <div class="flex flex-col">
                     <span class="font-display text-xl font-bold tracking-wider text-[#F4F2EF]">MOTOVEL</span>
                     <span class="text-[9px] uppercase tracking-[0.2em] text-[#92939A] font-semibold">Workspace Admin</span>
