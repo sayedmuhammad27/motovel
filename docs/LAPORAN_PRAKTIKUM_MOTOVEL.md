@@ -95,7 +95,7 @@ Dalam pelaksanaan praktikum dan pengembangan proyek sistem informasi manajemen b
 ### 2.1.2 Perangkat Lunak (Software)
 1. **Sistem Operasi:** Microsoft Windows 11 64-bit / Windows 10 (kompatibel dengan sistem operasi berbasis Linux dan macOS).
 2. **Paket Server Lokal:** XAMPP versi 8.2 (Apache HTTP Server dan MariaDB/MySQL Database Server).
-3. **Bahasa Pemrograman:** PHP versi 8.2.12 (CLI & CGI) dengan ekstensi aktif: pdo_mysql, mbstring, openssl, curl, ileinfo, dan 	okenizer.
+3. **Bahasa Pemrograman:** PHP versi 8.2.12 (CLI & CGI) dengan ekstensi aktif: pdo_mysql, mbstring, openssl, curl, fileinfo, dan tokenizer.
 4. **Sistem Pengelola Basis Data (DBMS):** MySQL / MariaDB versi 10.4 dengan phpMyAdmin sebagai antarmuka administrasi basis data berbasis web.
 5. **Kerangka Kerja Aplikasi (Backend Framework):** Laravel versi 12.x.
 6. **Pengelola Dependensi:**
