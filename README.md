@@ -23,7 +23,6 @@ MOTOVEL adalah sistem informasi manajemen servis sepeda motor modern berbasis we
 - [Akun Demo Pengguna](#-akun-demo-pengguna)
 - [Dokumentasi REST API v1](#-dokumentasi-rest-api-v1)
 - [Pengujian Menggunakan Postman](#-pengujian-menggunakan-postman)
-- [Dokumentasi Laporan Praktikum](#-dokumentasi-laporan-praktikum)
 - [Lisensi](#-lisensi)
 
 ---
@@ -314,17 +313,6 @@ Berkas koleksi pengujian resmi telah disertakan di dalam repositori:
 4. Koleksi **"MOTOVEL API v1"** akan terimpor secara otomatis dengan 7 folder sumber daya dan **35 request endpoint siap uji**.
 5. Pastikan variabel lingkungan `base_url` bernilai `http://127.0.0.1:8000`.
 6. Klik **Run Collection** untuk mengeksekusi seluruh pengujian secara otomatis (**Hasil: 35 Passed, 0 Failed**).
-
----
-
-## 📚 Dokumentasi Laporan Praktikum
-
-Laporan lengkap praktikum berbasis standar akademik perguruan tinggi telah disusun secara terperinci di direktori `docs/`:
-- 📕 **[docs/LAPORAN_PRAKTIKUM_MOTOVEL.pdf](docs/LAPORAN_PRAKTIKUM_MOTOVEL.pdf)**: Dokumen resmi siap cetak (92 halaman) lengkap dengan Halaman Judul Formal (Politeknik Negeri Lhokseumawe, TRKJ.2A), BAB I Pendahuluan, BAB II Percobaan (Alat, Bahan, dan Prosedur Kerja), BAB III Penutup & Kesimpulan, serta Lampiran Kode Sumber dengan 62 tangkapan layar beresolusi tinggi.
-- 🌐 **[docs/LAPORAN_PRAKTIKUM_MOTOVEL.html](docs/LAPORAN_PRAKTIKUM_MOTOVEL.html)**: Naskah laporan versi *standalone HTML* (3.28 MB) dengan gambar tertanam (*base64 self-contained*) yang dapat dibuka langsung pada peramban web tanpa memerlukan dependensi eksternal.
-- 📝 **[docs/LAPORAN_PRAKTIKUM_MOTOVEL.md](docs/LAPORAN_PRAKTIKUM_MOTOVEL.md)**: Naskah format Markdown naskah lengkap (BAB I, II, III, dan Lampiran).
-- 📋 **[docs/LAPORAN_LANGKAH_KERJA_MOTOVEL.md](docs/LAPORAN_LANGKAH_KERJA_MOTOVEL.md)**: Naskah langkah kerja prosedural format Bab 5, 6, 7 acuan praktikum dengan 62 gambar tangkapan layar.
-- 🖼️ **[docs/screenshots/](docs/screenshots/)**: Direktori berisi 62 berkas tangkapan layar resolusi tinggi yang mencakup eksekusi CLI, skema basis data, antarmuka web, pengujian Postman, repositori GitHub, dan kode sumber sistem.
 
 ---
 
